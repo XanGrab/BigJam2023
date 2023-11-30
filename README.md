@@ -1,6 +1,6 @@
-# BigMode Jam 2023 Game 🐸
+# BigMode Jam 2023 Game 🎼
 
-A very big, very cool game 😎
+An arcade-style brawler themed around different musical and combat modes
 
 ## Play Now!
 
