@@ -107,4 +107,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@4
         with:
           branch: deploy
-          folder: build
+          folder: build/WebGL
