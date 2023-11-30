@@ -74,3 +74,8 @@ crashlytics-build.properties
 # Ignore temporaries from GameCI
 /[Aa]rtifacts/
 /[Cc]odeCoverage/
+
+# dotenv environment Files
+*.env
+*.env.test
+*.secrets
