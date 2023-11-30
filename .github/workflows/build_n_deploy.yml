@@ -105,8 +105,9 @@ jobs:
 
       # Reorganize Dir
       - name: Remove WebGl Dir
-        run: mv build/WebGL/* build
-        run: rm build/WebGL/
+        run: |
+          mv build/WebGL/* build
+          rm build/WebGL/
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
