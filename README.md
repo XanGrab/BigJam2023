@@ -4,4 +4,4 @@ An arcade-style brawler themed around different musical and combat modes
 
 ## Play Now!
 
-TODO: put the link here
+[Play in Browser!](https://xangrab.github.io/ModeJam2023/)
