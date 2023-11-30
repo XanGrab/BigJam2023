@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch: {}
 
 env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
@@ -11,25 +12,61 @@ env:
   UNITY_PASSWORD: ${{ secrets.XANDER_PASSWORD }}
 
 jobs:
-  testRunner:
-    name: Test in ${{ matrix.testMode }} ✨
+  #   testRunner:
+  #     name: Test in ${{ matrix.testMode }} ✨
+  #     runs-on: ubuntu-latest
+  #     strategy:
+  #       fail-fast: false
+  #       matrix:
+  #         testMode:
+  #           - EditMode
+  #           - PlayMode
+  #     steps:
+  #       # Checkout
+  #       - name: Checkout repository
+  #         uses: actions/checkout@v2
+  #         with:
+  #           fetch-depth: 0
+  #           lfs: true
+
+  #       # Cache
+  #       - uses: actions/cache@v2
+  #         with:
+  #           path: Library
+  #           key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+  #           restore-keys: |
+  #             Library-
+
+  #       # Test
+  #       - name: Unity Run Tests
+  #         uses: game-ci/unity-test-runner@v2.0.3
+  #         id: testRunner
+  #         with:
+  #           # projectPath: Library
+  #           testMode: ${{ matrix.testMode }}
+  #           checkName: ${{ matrix.testMode }} test results
+  #           githubToken: ${{ secrets.GITHUB_TOKEN }}
+
+  #       - uses: actions/upload-artifact@v2
+  #         with:
+  #           name: Test results (${{ matrix.testMode }})
+  #           path: ${{ steps.testRunner.outputs.artifactsPath }}
+
+  buildWebGL:
+    # needs: testRunner
+    name: Build for WebGL 🖥️
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      matrix:
-        testMode:
-          - EditMode
-          - PlayMode
     steps:
       # Checkout
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 0
           lfs: true
 
       # Cache
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         with:
           path: Library
           key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
@@ -37,68 +74,28 @@ jobs:
             Library-
 
       # Test
-      - name: Unity Run Tests
-        uses: game-ci/unity-test-runner@v2.0.3
-        id: testRunner
+      - name: Run tests
+        uses: game-ci/unity-test-runner@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
-          # projectPath: Library
-          testMode: ${{ matrix.testMode }}
-          checkName: ${{ matrix.testMode }} test results
           githubToken: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: actions/upload-artifact@v2
-        with:
-          name: Test results (${{ matrix.testMode }})
-          path: ${{ steps.testRunner.outputs.artifactsPath }}
-
-  buildWebGL:
-    needs: testRunner
-    name: Build for WebGL 🖥️
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-    steps:
-      # Checkout
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      # Cache & LFS
-      - name: Create LFS file list
-        run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
-
-      - name: Restore LFS cache
-        uses: actions/cache@v2
-        id: lfs-cache
-        with:
-          path: .git/lfs
-          key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets-id') }}
-
-      - name: Git LFS Pull
-        run: |
-          git lfs pull
-          git add .
-          git reset --hard
-
-      - name: Restore Library cache
-        uses: actions/cache@v2
-        with:
-          path: Library
-          key: Library-build-WebGL
-          restore-keys: |
-            Library-build-
-            Library-
-
       # Build
-      - uses: game-ci/unity-builder@v2
+      - name: Build project
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.XANDER_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.XANDER_PASSWORD }}
         with:
-          allowDirtyBuild: true
-          versioning: Semantic
           targetPlatform: WebGL
 
-      - uses: actions/upload-artifact@v2
+      # Output
+      - uses: actions/upload-artifact@v3
         with:
-          name: build-WebGL
-          path: build/WebGL
+          name: Build
+          path: build
 
   deployPages:
     needs: buildWebGL
