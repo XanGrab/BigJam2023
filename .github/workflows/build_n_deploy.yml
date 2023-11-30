@@ -101,11 +101,15 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: Build
+<<<<<<< HEAD
           path: build/
 
       - name: DEBUG
         run: ls -R
         working-directory: build
+=======
+          path: build/WebGL/
+>>>>>>> 312f559cf478a7335d3d939d676e56bf83749bdc
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
