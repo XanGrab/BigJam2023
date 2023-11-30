@@ -88,7 +88,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: Build
-          path: build
+          path: build/WebGL/
 
   deployPages:
     needs: buildWebGL
@@ -103,15 +103,8 @@ jobs:
           name: Build
           path: build
 
-      # Reorganize Dir
-      - name: Remove WebGl Dir
-        run: |
-          mv build/WebGL/* build
-          rm build/WebGL/
-
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: deploy
-          folder: build
-          target-folder: .
+          folder: build/WebGl/
