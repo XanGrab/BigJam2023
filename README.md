@@ -2,6 +2,6 @@
 
 An arcade-style brawler themed around different musical and combat modes
 
-## Play Now!
+## [Play Now!](https://xangrab.github.io/ModeJam2023/)
 
-[Play in Browser!](https://xangrab.github.io/ModeJam2023/)
+
