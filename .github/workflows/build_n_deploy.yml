@@ -102,8 +102,6 @@ jobs:
         with:
           name: Build
 
-          path: build/
-
       - name: DEBUG
         run: ls -R
         working-directory: build
