@@ -104,7 +104,7 @@ jobs:
 
       - name: DEBUG
         run: ls -R
-        working-directory: build
+        working-directory: .
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
