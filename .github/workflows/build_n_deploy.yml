@@ -1,0 +1,114 @@
+name: Unity GameCI Template 🎮
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: {}
+
+env:
+  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+  UNITY_EMAIL: ${{ secrets.XANDER_EMAIL }}
+  UNITY_PASSWORD: ${{ secrets.XANDER_PASSWORD }}
+permissions:
+  contents: write
+jobs:
+  #   testRunner:
+  #     name: Test in ${{ matrix.testMode }} ✨
+  #     runs-on: ubuntu-latest
+  #     strategy:
+  #       fail-fast: false
+  #       matrix:
+  #         testMode:
+  #           - EditMode
+  #           - PlayMode
+  #     steps:
+  #       # Checkout
+  #       - name: Checkout repository
+  #         uses: actions/checkout@v2
+  #         with:
+  #           fetch-depth: 0
+  #           lfs: true
+
+  #       # Cache
+  #       - uses: actions/cache@v2
+  #         with:
+  #           path: Library
+  #           key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+  #           restore-keys: |
+  #             Library-
+
+  #       # Test
+  #       - name: Unity Run Tests
+  #         uses: game-ci/unity-test-runner@v4
+  #         id: testRunner
+  #         with:
+  #           # projectPath: Library
+  #           testMode: ${{ matrix.testMode }}
+  #           checkName: ${{ matrix.testMode }} test results
+  #           githubToken: ${{ secrets.GITHUB_TOKEN }}
+
+  #       - uses: actions/upload-artifact@v2
+  #         with:
+  #           name: Test results (${{ matrix.testMode }})
+  #           path: ${{ steps.testRunner.outputs.artifactsPath }}
+
+  buildWebGL:
+    # needs: testRunner
+    name: Build for WebGL 🖥️
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    steps:
+      # Checkout
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      # Cache
+      - uses: actions/cache@v3
+        with:
+          path: Library
+          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-
+
+      # Build
+      - name: Build project
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.XANDER_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.XANDER_PASSWORD }}
+        with:
+          targetPlatform: WebGL
+
+      # Output
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Build
+          path: build/WebGL/
+
+  deployPages:
+    needs: buildWebGL
+    name: Deploy to Github Pages 🚀
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - uses: actions/download-artifact@v2
+        with:
+          name: Build
+          path: build/
+
+      - name: DEBUG
+        run: ls -R
+        working-directory: .
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: deploy
+          folder: build/WebGL/

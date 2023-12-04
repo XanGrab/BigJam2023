@@ -1,8 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : Singleton<PlayerController>
-{
+public class PlayerController : Singleton<PlayerController> {
     [Header("External References")]
     [SerializeField] private GameObject afterimagePrefab;
 
@@ -18,8 +17,7 @@ public class PlayerController : Singleton<PlayerController>
     private PlayerAnimStateEnum currentAnimation;
 
     //Animation states
-    enum PlayerAnimStateEnum
-    {
+    enum PlayerAnimStateEnum {
         Player_Idle,
         Player_Jump_Up,
         Player_Jump_Down,
@@ -54,15 +52,10 @@ public class PlayerController : Singleton<PlayerController>
     private float lastTimeSpawnedAfterimage = -100.0f;
     #endregion
 
+    /// <returns>/// Returns if the player is currently able to move (not attacking, dashing, stunned, etc.)</returns>
+    private bool CanMove => ( true );
 
-    /// <summary>
-    /// Returns if the player is currently able to move (not attacking, dashing, stunned, etc.)
-    /// </summary>
-    /// <returns></returns>
-    private bool CanMove =>
-    (
-        true
-    );
+    private void Update() {
 
     // Start is called before the first frame update
     void Start()
