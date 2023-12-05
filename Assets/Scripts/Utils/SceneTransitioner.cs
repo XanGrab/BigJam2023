@@ -6,7 +6,7 @@ public class SceneTransitioner : Singleton<SceneTransitioner>
 {
     public enum SceneIndicies
     {
-        Gameplay = 1
+        Gameplay = 0
     }
 
     private void Start()

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1777379201351136282}
   - component: {fileID: 4329203616960986096}
-  - component: {fileID: 7604924533240460509}
   m_Layer: 0
   m_Name: SceneTransitioner
   m_TagString: Untagged
@@ -43,17 +42,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 816e1bbc77c826f44858b59ba09dfa5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7604924533240460509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7945674730454583715}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce09c25676dcd2e4c8ef4eb116a66905, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
