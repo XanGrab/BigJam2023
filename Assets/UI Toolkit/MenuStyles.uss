@@ -1,0 +1,44 @@
+.main-menu-button {
+    height: 15px;
+    width: auto;
+    -unity-font: url('project://database/Assets/Fonts/PixelClean.ttf?fileID=12800000&guid=0cb3d4e65972386beaab0fcd495d9592&type=3#PixelClean');
+    -unity-font-style: normal;
+    font-size: 32px;
+    border-left-color: rgba(149, 149, 149, 0);
+    border-right-color: rgba(149, 149, 149, 0);
+    border-top-color: rgba(149, 149, 149, 0);
+    border-bottom-color: rgba(149, 149, 149, 0);
+    background-color: rgba(188, 188, 188, 0);
+    -unity-font-definition: url('project://database/Assets/Fonts/PixelClean%20SDF.asset?fileID=11400000&guid=96a90f8c9249f9cd3b2c03f915f095e3&type=2#PixelClean SDF');
+    color: rgb(0, 0, 0);
+}
+
+.main-menu-button:hover {
+    height: 15px;
+    width: 75px;
+    -unity-font: url('project://database/Assets/Fonts/PixelClean.ttf?fileID=12800000&guid=0cb3d4e65972386beaab0fcd495d9592&type=3#PixelClean');
+    -unity-font-style: normal;
+    font-size: 32px;
+    border-left-color: rgba(149, 149, 149, 0);
+    border-right-color: rgba(149, 149, 149, 0);
+    border-top-color: rgba(149, 149, 149, 0);
+    border-bottom-color: rgba(149, 149, 149, 0);
+    background-color: rgba(0, 0, 0, 0.17);
+    -unity-font-definition: url('project://database/Assets/Fonts/PixelClean%20SDF.asset?fileID=11400000&guid=96a90f8c9249f9cd3b2c03f915f095e3&type=2#PixelClean SDF');
+    color: rgb(0, 0, 0);
+}
+
+.main-menu-button:active {
+    height: 15px;
+    width: 75px;
+    -unity-font: url('project://database/Assets/Fonts/PixelClean.ttf?fileID=12800000&guid=0cb3d4e65972386beaab0fcd495d9592&type=3#PixelClean');
+    -unity-font-style: normal;
+    font-size: 32px;
+    border-left-color: rgba(149, 149, 149, 0);
+    border-right-color: rgba(149, 149, 149, 0);
+    border-top-color: rgba(149, 149, 149, 0);
+    border-bottom-color: rgba(149, 149, 149, 0);
+    background-color: rgba(0, 0, 0, 0.52);
+    -unity-font-definition: url('project://database/Assets/Fonts/PixelClean%20SDF.asset?fileID=11400000&guid=96a90f8c9249f9cd3b2c03f915f095e3&type=2#PixelClean SDF');
+    color: rgb(255, 255, 255);
+}
