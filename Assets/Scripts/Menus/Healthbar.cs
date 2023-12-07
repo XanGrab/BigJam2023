@@ -1,7 +1,6 @@
 using System;
 
-public class Healthbar : Singleton<Healthbar>
-{
+public class Healthbar : Singleton<Healthbar> {
     public void UpdateHPBar(float _currHp)
     {
         throw new NotImplementedException();

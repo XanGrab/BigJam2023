@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Player%20HUD/PlayerHUDStyles.uss?fileID=7433441132597879392&amp;guid=5bfddec0ca7b9167996ba51250a1a92b&amp;type=3#PlayerHUDStyles" />
+    <ui:VisualElement name="Root" style="flex-grow: 1; height: 497px; flex-direction: row; width: 961px; background-color: rgba(0, 0, 0, 0); flex-basis: auto;">
+        <ui:ProgressBar value="22" title="Health" name="HealthBar" class="player-health-bar" style="width: 20%; margin-top: 32px; margin-right: 8px; margin-bottom: 0; margin-left: 32px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 1px; min-width: 169px;" />
+        <ui:VisualElement name="MusicStaff" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Sprites/UI%20Elements/treble_n_staff.png?fileID=2800000&amp;guid=ff15ed4c5974597b2ad50d094df1ca7e&amp;type=3#treble_n_staff&apos;); width: 192px; height: 72px; position: relative; max-width: 288px; max-height: 72px; margin-top: 8px; margin-left: 8px; margin-right: 8px; min-width: 192px; min-height: 48px; flex-basis: auto;" />
+    </ui:VisualElement>
+</ui:UXML>

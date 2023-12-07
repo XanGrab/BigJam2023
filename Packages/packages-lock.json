@@ -307,6 +307,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.xangrab.audio-manager": {
+      "version": "https://github.com/XanGrab/UnityAudioManager.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "e7cd2b0bb71f44c0e5b8542ef573c4ee9f13deb3"
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,

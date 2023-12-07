@@ -1,0 +1,15 @@
+.player-health-bar {
+    background-color: rgba(0, 0, 0, 0);
+    width: auto;
+    -unity-font: url('project://database/Assets/Fonts/PixelClean.ttf?fileID=12800000&guid=0cb3d4e65972386beaab0fcd495d9592&type=3#PixelClean');
+    -unity-font-definition: url('project://database/Assets/Fonts/PixelClean%20SDF.asset?fileID=11400000&guid=96a90f8c9249f9cd3b2c03f915f095e3&type=2#PixelClean SDF');
+    -unity-text-outline-color: rgba(0, 0, 0, 0);
+}
+
+.player-health-bar .unity-progress-bar__progress {
+    background-color: rgb(255, 0, 55);
+    width: auto;
+    height: -252px;
+    min-width: auto;
+    min-height: auto;
+}
