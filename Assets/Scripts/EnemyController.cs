@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : Singleton<PlayerController>
+public class EnemyController : MonoBehaviour
 {
     [Header("External References")]
     [SerializeField] private GameObject afterimagePrefab;
@@ -22,8 +22,6 @@ public class PlayerController : Singleton<PlayerController>
         Player_Idle,
         Player_Jump_Up,
         Player_Jump_Down,
-        Player_Drill_Right,
-        Player_Drill_Down
     }
 
     [Header("Parameters")]
@@ -48,19 +46,8 @@ public class PlayerController : Singleton<PlayerController>
     private const float jumpBuffer = 0.1f;
     private const float coyoteTime = 0.1f;
 
-    #region Afterimage
-    private const float secsPerAfterimage = 0.01f;
-    private float lastTimeSpawnedAfterimage = -100.0f;
-    #endregion
-
     /// <returns>/// Returns if the player is currently able to move (not attacking, dashing, stunned, etc.)</returns>
     private bool CanMove => (true);
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     private void Update()
     {
@@ -74,8 +61,12 @@ public class PlayerController : Singleton<PlayerController>
             //Convert global velocity to local velocity
             Vector3 velocity_local = noGravVelocity;
 
+            Vector3 dist = (PlayerController.Instance.transform.position - transform.position);
+            dist.y = 0;
+            Vector3 currInput = new Vector3();
             //XZ Friction + acceleration
-            Vector3 currInput = new Vector3(InputHandler.Instance.Direction.x, 0, InputHandler.Instance.Direction.y);
+            if (dist.magnitude > 1)
+                currInput = dist.normalized;
 
             if (currInput.magnitude > 0.05f)
                 currInput.Normalize();
@@ -142,13 +133,6 @@ public class PlayerController : Singleton<PlayerController>
                         }
                         else //Would stay over max speed, use vector with smaller magnitude
                         {
-                            // Debug.Log("withotInput: " + velocity_local.magnitude);
-                            // Debug.Log(velocity_local);
-                            // Debug.Log("input: " + velocity_local_with_input.magnitude);
-                            // Debug.Log(velocity_local_with_input);
-                            // Debug.Log("friction: " + velocity_local_friction.magnitude);
-                            // Debug.Log(velocity_local_friction);
-
                             //Would accelerate more, so don't user player input
                             if (velocity_local_with_input.magnitude > velocity_local_friction.magnitude)
                                 updatedVelocity = velocity_local_friction;
@@ -167,26 +151,22 @@ public class PlayerController : Singleton<PlayerController>
 
 
         //Sprite flipping + spark vfx
-        bool leftVFXActive = false;
-        bool rightVFXActive = false;
         if (rb.velocity.x < -epsilon)
         {
             spriteRenderer.flipX = true;
-            leftVFXActive = true;
         }
         else
         {
             if (rb.velocity.x > epsilon)
             {
                 spriteRenderer.flipX = false;
-                rightVFXActive = true;
             }
         }
 
         //Gravity
         if (useGravity)
         {
-            if (InputHandler.Instance.Jump.Holding && rb.velocity.y > 0)
+            if ((PlayerController.Instance.transform.position.y - 1 > transform.position.y) && rb.velocity.y > 0)
                 rb.velocity -= new Vector3(0, gravUp * Time.deltaTime, 0);
             else
                 rb.velocity -= new Vector3(0, gravDown * Time.deltaTime, 0);
@@ -231,7 +211,7 @@ public class PlayerController : Singleton<PlayerController>
             lastTimeGrounded = Time.time;
 
         //Jump - grounded
-        if (InputHandler.Instance.Jump.Pressed)
+        if (PlayerController.Instance.transform.position.y - 1 > transform.position.y)
         {
             if ((grounded || (Time.time - lastTimeGrounded <= coyoteTime)))
                 Jump();
@@ -245,38 +225,40 @@ public class PlayerController : Singleton<PlayerController>
                 Jump();
         }
 
+        //TODO: Enemy atttacks
+
         //Boom attack
-        if (InputHandler.Instance.LightAttack.Pressed)
-        {
-            float angle;
+        //if (InputHandler.Instance.LightAttack.Pressed)
+        //{
+        //    float angle;
 
-            if (InputHandler.Instance.Direction.magnitude > epsilon)
-            {
-                //Attack in the held direction
-                angle = Mathf.Atan2(InputHandler.Instance.Direction.y, InputHandler.Instance.Direction.x);
-                angle = Mathf.Rad2Deg * angle;
+        //    if (InputHandler.Instance.Direction.magnitude > epsilon)
+        //    {
+        //        //Attack in the held direction
+        //        angle = Mathf.Atan2(InputHandler.Instance.Direction.y, InputHandler.Instance.Direction.x);
+        //        angle = Mathf.Rad2Deg * angle;
 
-                angle = Mathf.RoundToInt(angle / 90.0f) * 90.0f;
-            }
-            else
-            {
-                //Attack in the faced direction (horizontally)
-                if (!spriteRenderer.flipX)
-                    angle = 0;
-                else
-                    angle = 180;
-            }
+        //        angle = Mathf.RoundToInt(angle / 90.0f) * 90.0f;
+        //    }
+        //    else
+        //    {
+        //        //Attack in the faced direction (horizontally)
+        //        if (!spriteRenderer.flipX)
+        //            angle = 0;
+        //        else
+        //            angle = 180;
+        //    }
 
-            boom_anim.transform.eulerAngles = new Vector3(0, 0, angle);
+        //    boom_anim.transform.eulerAngles = new Vector3(0, 0, angle);
 
-            boom_anim.SetTrigger("Boom");
-        }
+        //    boom_anim.SetTrigger("Boom");
+        //}
 
-        //Space release gravity
-        if (InputHandler.Instance.Jump.Released && rb.velocity.y > 0)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * spaceReleaseGravMult);
-        }
+        ////Space release gravity
+        //if (InputHandler.Instance.Jump.Released && rb.velocity.y > 0)
+        //{
+        //    rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * spaceReleaseGravMult);
+        //}
     }
 
     private void Jump()
@@ -286,11 +268,6 @@ public class PlayerController : Singleton<PlayerController>
         rb.velocity = new Vector2(rb.velocity.x, jumpPower);
 
         grounded = false;
-    }
-
-    private void SpawnAfterimage()
-    {
-        lastTimeSpawnedAfterimage = Time.time;
     }
 
     private void ChangeAnimationState(PlayerAnimStateEnum _newState)

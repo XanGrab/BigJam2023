@@ -6,6 +6,12 @@ public class ShadowEntity : MonoBehaviour
 
     [SerializeField] private LayerMask groundLayer;
 
+    private void Start()
+    {
+        shadowTransform.gameObject.name = "shadow_" + name;
+        shadowTransform.parent = null;
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
