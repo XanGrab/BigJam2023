@@ -15,11 +15,11 @@ TagManager:
   - Entity
   - Terrain
   - 
+  - PlayerHurtbox
+  - PlayerHitbox
   - 
-  - 
-  - 
-  - 
-  - 
+  - EnemyHurtbox
+  - EnemyHitbox
   - 
   - 
   - 

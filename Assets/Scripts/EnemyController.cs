@@ -65,7 +65,7 @@ public class EnemyController : MonoBehaviour
             dist.y = 0;
             Vector3 currInput = new Vector3();
             //XZ Friction + acceleration
-            if (dist.magnitude > 1)
+            if (dist.magnitude > 2)
                 currInput = dist.normalized;
 
             if (currInput.magnitude > 0.05f)
@@ -211,7 +211,7 @@ public class EnemyController : MonoBehaviour
             lastTimeGrounded = Time.time;
 
         //Jump - grounded
-        if (PlayerController.Instance.transform.position.y - 1 > transform.position.y)
+        if (PlayerController.Instance.transform.position.y - 2 > transform.position.y)
         {
             if ((grounded || (Time.time - lastTimeGrounded <= coyoteTime)))
                 Jump();

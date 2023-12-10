@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerStats : Singleton<PlayerStats>
+public class EnemyStats : MonoBehaviour
 {
     [SerializeField] private float maxHp;
     private float currHp;
@@ -8,7 +8,6 @@ public class PlayerStats : Singleton<PlayerStats>
     // Start is called before the first frame update
     void Start()
     {
-        //Healthbar.Instance.UpdateMaxHP(maxHp);
         currHp = maxHp;
     }
 
@@ -16,7 +15,7 @@ public class PlayerStats : Singleton<PlayerStats>
     {
         currHp = Mathf.Max(0, currHp - _dmg);
 
-        SetHPVisuals(currHp / maxHp);
+        //Healthbar.Instance.UpdateHPBar(currHp / maxHp);
 
         if (currHp <= 0)
             Die();
@@ -24,7 +23,7 @@ public class PlayerStats : Singleton<PlayerStats>
 
     private void Die()
     {
-
+        Destroy(gameObject);
     }
 
     /// <summary>
@@ -39,13 +38,8 @@ public class PlayerStats : Singleton<PlayerStats>
 
         currHp = Mathf.Min(maxHp, currHp + _heal);
 
-        SetHPVisuals(currHp / maxHp);
+        //Healthbar.Instance.UpdateHPBar(currHp / maxHp);
 
         return true;
-    }
-
-    private void SetHPVisuals(float _healthPercent)
-    {
-        //Xander put your funny uwu code here or something idk
     }
 }
