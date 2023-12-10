@@ -307,12 +307,12 @@
       },
       "url": "https://packages.unity.com"
     },
-    "com.xangrab.common-systems": {
+    "com.xangrab.common-reusables": {
       "version": "https://github.com/XanGrab/Unity-Common-Systems.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "f50ef2ac59d79c3e19be26f1c4d7e8148509ba72"
+      "hash": "3e6a1bb22acf4349f0c8226d638dc0e264d6ca5b"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
