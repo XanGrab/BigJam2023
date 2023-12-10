@@ -58,8 +58,7 @@ public class PlayerController : Singleton<PlayerController>
     private bool CanMove => (true);
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
 
     }
 
