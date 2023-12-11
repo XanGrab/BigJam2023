@@ -11,6 +11,7 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Animator anim;
     [SerializeField] private Animator boom_anim;
+    [SerializeField] private Transform attackParent;
     [SerializeField] private List<Transform> raycastPoints;
     [SerializeField] private float raycastHeight;
 
@@ -248,26 +249,22 @@ public class PlayerController : Singleton<PlayerController>
         //Boom attack
         if (InputHandler.Instance.LightAttack.Pressed)
         {
-            float angle;
+            float xScale = 1;
 
             if (InputHandler.Instance.Direction.magnitude > epsilon)
             {
                 //Attack in the held direction
-                angle = Mathf.Atan2(InputHandler.Instance.Direction.y, InputHandler.Instance.Direction.x);
-                angle = Mathf.Rad2Deg * angle;
-
-                angle = Mathf.RoundToInt(angle / 90.0f) * 90.0f;
+                if (InputHandler.Instance.Direction.x < 0)
+                    xScale = -1;
             }
             else
             {
                 //Attack in the faced direction (horizontally)
-                if (!spriteRenderer.flipX)
-                    angle = 0;
-                else
-                    angle = 180;
+                if (spriteRenderer.flipX)
+                    xScale = -1;
             }
 
-            boom_anim.transform.eulerAngles = new Vector3(0, 0, angle);
+            attackParent.localScale = new Vector3(xScale, 1, 1);
 
             boom_anim.SetTrigger("Boom");
         }

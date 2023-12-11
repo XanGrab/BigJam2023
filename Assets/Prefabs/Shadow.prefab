@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8778066586697927983}
   - component: {fileID: 8778066586697927976}
   - component: {fileID: 8778066586697927977}
+  - component: {fileID: 6829918607256529703}
   m_Layer: 7
   m_Name: Shadow
   m_TagString: Untagged
@@ -25,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8778066586697927980}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -2.507, z: 0}
   m_LocalScale: {x: 1, y: 0.05, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8778066586697927976
 MeshFilter:
@@ -83,3 +84,15 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!210 &6829918607256529703
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8778066586697927980}
+  m_Enabled: 1
+  m_SortingLayerID: 1709670231
+  m_SortingLayer: 2
+  m_SortingOrder: 0
+  m_SortAtRoot: 0

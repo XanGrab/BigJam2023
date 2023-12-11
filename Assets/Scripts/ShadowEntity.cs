@@ -12,6 +12,11 @@ public class ShadowEntity : MonoBehaviour
         shadowTransform.parent = null;
     }
 
+    private void OnDestroy()
+    {
+        Destroy(shadowTransform.gameObject);
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {

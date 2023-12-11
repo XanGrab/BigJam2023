@@ -1,25 +1,29 @@
 using UnityEngine;
 
-public class PlayerStats : Singleton<PlayerStats> {
+public class PlayerStats : Singleton<PlayerStats>
+{
     [SerializeField] private float maxHp;
     private float currHp;
 
     // Start is called before the first frame update
-    void Start() {
+    void Start()
+    {
         //Healthbar.Instance.UpdateMaxHP(maxHp);
         currHp = maxHp;
     }
 
-    public void TakeDamage(int _dmg) {
+    public void TakeDamage(float _dmg)
+    {
         currHp = Mathf.Max(0, currHp - _dmg);
 
-        Healthbar.Instance.UpdateHPBar(currHp / maxHp);
+        SetHPVisuals(currHp / maxHp);
 
         if (currHp <= 0)
             Die();
     }
 
-    private void Die() {
+    private void Die()
+    {
 
     }
 
@@ -28,22 +32,20 @@ public class PlayerStats : Singleton<PlayerStats> {
     /// </summary>
     /// <param name="_heal"> amount of health to heal </param>
     /// <returns> true if the healing was successful, false if the player is already at full hp.</returns>
-    public bool Heal(int _heal) {
+    public bool Heal(float _heal)
+    {
         if (currHp == maxHp)
             return false;
 
         currHp = Mathf.Min(maxHp, currHp + _heal);
 
-        Healthbar.Instance.UpdateHPBar(currHp / maxHp);
+        SetHPVisuals(currHp / maxHp);
 
         return true;
     }
 
-    public void MaxHpUp() {
-        maxHp++;
-        currHp++;
-
-        Healthbar.Instance.UpdateMaxHP(maxHp);
-        Healthbar.Instance.UpdateHPBar(currHp / maxHp);
+    private void SetHPVisuals(float _healthPercent)
+    {
+        //Xander put your funny uwu code here or something idk
     }
 }
