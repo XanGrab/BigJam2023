@@ -1,25 +1,29 @@
+using System;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class PlayerStats : Singleton<PlayerStats>
-{
+public class PlayerStats : Singleton<PlayerStats>{
     [SerializeField] private float maxHp;
     private float currHp;
 
+    public event Action onHPChange;
+    public UnityEvent onStatsReady;
+
     // Start is called before the first frame update
-    void Start()
-    {
-        //Healthbar.Instance.UpdateMaxHP(maxHp);
+    void Start() {
         currHp = maxHp;
+        onStatsReady.Invoke();
     }
 
-    public void TakeDamage(float _dmg)
-    {
-        currHp = Mathf.Max(0, currHp - _dmg);
+    public float getMaxHP() => maxHp;
+    public float getCurrHp() => currHp;
 
-        SetHPVisuals(currHp / maxHp);
+    public void TakeDamage(float _dmg) {
+        currHp = Mathf.Max(0, currHp - _dmg);
 
         if (currHp <= 0)
             Die();
+        onHPChange?.Invoke();
     }
 
     private void Die()
@@ -36,16 +40,9 @@ public class PlayerStats : Singleton<PlayerStats>
     {
         if (currHp == maxHp)
             return false;
-
         currHp = Mathf.Min(maxHp, currHp + _heal);
 
-        SetHPVisuals(currHp / maxHp);
-
+        onHPChange?.Invoke();
         return true;
-    }
-
-    private void SetHPVisuals(float _healthPercent)
-    {
-        //Xander put your funny uwu code here or something idk
     }
 }

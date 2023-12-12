@@ -2,14 +2,16 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(UIDocument))]
 public class MainMenu : MonoBehaviour {
-    [SerializeField] private VisualElement root;
+    private UIDocument menu;
 
     private Button startButton;
     private Button creditsButton;
     
     void Start() {
-        root = GetComponent<UIDocument>().rootVisualElement;
+       menu = GetComponent<UIDocument>(); 
+        var root = menu.rootVisualElement;
         startButton = root.Q<Button>("Start-Button");
         creditsButton = root.Q<Button>("Credits-Button");
 
@@ -33,7 +35,9 @@ public class MainMenu : MonoBehaviour {
     }
     
     void StartButtonPress() => SceneManager.LoadScene("Gameplay");
-    void CreditsButtonPress() => Debug.Log("TODO");
+    void CreditsButtonPress() { 
+        Debug.Log("TODO");
+    }
 
 
 }
