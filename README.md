@@ -13,6 +13,7 @@ Now the Maestro must set things right and demonstrate his mastery of the mystic 
 | **Action** | **Key** |
 | :---: | :---: |
 | Move | WADS / Arrow Keys |
+| Attack | Z |
 
 ## [Play Now!](https://xangrab.github.io/ModeJam2023/)
 
