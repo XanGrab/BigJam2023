@@ -1,5 +1,5 @@
 .main-menu-button {
-    height: 15px;
+    height: 16px;
     width: auto;
     -unity-font: url('project://database/Assets/Fonts/PixelClean.ttf?fileID=12800000&guid=0cb3d4e65972386beaab0fcd495d9592&type=3#PixelClean');
     -unity-font-style: normal;
@@ -16,8 +16,8 @@
 }
 
 .main-menu-button:focus {
-    height: 15px;
-    width: 75px;
+    height: 16px;
+    width: auto;
     -unity-font: url('project://database/Assets/Fonts/PixelClean.ttf?fileID=12800000&guid=0cb3d4e65972386beaab0fcd495d9592&type=3#PixelClean');
     -unity-font-style: normal;
     font-size: 32px;
@@ -31,8 +31,8 @@
 }
 
 .main-menu-button:hover {
-    height: 15px;
-    width: 75px;
+    height: 16px;
+    width: auto;
     -unity-font: url('project://database/Assets/Fonts/PixelClean.ttf?fileID=12800000&guid=0cb3d4e65972386beaab0fcd495d9592&type=3#PixelClean');
     -unity-font-style: normal;
     font-size: 32px;
@@ -46,8 +46,8 @@
 }
 
 .main-menu-button:active {
-    height: 15px;
-    width: 75px;
+    height: 16px;
+    width: auto;
     -unity-font: url('project://database/Assets/Fonts/PixelClean.ttf?fileID=12800000&guid=0cb3d4e65972386beaab0fcd495d9592&type=3#PixelClean');
     -unity-font-style: normal;
     font-size: 32px;

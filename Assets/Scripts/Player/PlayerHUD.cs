@@ -15,11 +15,9 @@ public class PlayerHUD : MonoBehaviour {
         var root = playerHUD.rootVisualElement;
         Healthbar = root.Q<ProgressBar>("HealthBar");
 
-        Debug.Log("DEBUG [PlayerHUD] getMaxHP: " + playerStats.getMaxHP());
         Healthbar.highValue = playerStats.getMaxHP();
         Healthbar.lowValue = 0;
 
-        Debug.Log("DEBUG [PlayerHUD] currHp: " + playerStats.getCurrHp());
         Healthbar.value = playerStats.getCurrHp();
     }
 

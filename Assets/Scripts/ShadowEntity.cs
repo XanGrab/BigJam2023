@@ -1,25 +1,17 @@
 using UnityEngine;
 
-public class ShadowEntity : MonoBehaviour
-{
+public class ShadowEntity : MonoBehaviour {
     [SerializeField] private Transform shadowTransform;
 
     [SerializeField] private LayerMask groundLayer;
 
-    private void Start()
-    {
+    private void Start() {
         shadowTransform.gameObject.name = "shadow_" + name;
         shadowTransform.parent = null;
     }
 
-    private void OnDestroy()
-    {
-        Destroy(shadowTransform.gameObject);
-    }
-
     // Update is called once per frame
-    void FixedUpdate()
-    {
+    void FixedUpdate() {
         #region Set position and scale of "shadow" object
         float newScale = 0;
         if (Physics.Raycast(transform.position + new Vector3(0, 1, 0), -transform.up, out RaycastHit _hit, 50, groundLayer))
@@ -33,4 +25,9 @@ public class ShadowEntity : MonoBehaviour
         shadowTransform.localScale = new Vector3(newScale, shadowTransform.localScale.y, newScale);
         #endregion
     }
+
+    private void OnDestroy() {
+        if (shadowTransform) Destroy(shadowTransform.gameObject);
+    }
+
 }

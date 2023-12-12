@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c1f439c17514bf40da9eea8e0e8a6337
+guid: 2f2aad094fd62e6f697e348fd67fc52e
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -140,18 +140,138 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
   spriteSheetImportData:
-  - name: Stage
+  - name: WeaponIcons_0
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 960
-      height: 180
+      width: 14
+      height: 14
     spriteID: dd186696921634843af06f48e3a02a67
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: WeaponIcons_1
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 20
+      y: 4
+      width: 14
+      height: 14
+    spriteID: 4b874488aa6a0a4488c5069a61e610fd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: WeaponIcons_2
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 36
+      y: 4
+      width: 14
+      height: 14
+    spriteID: 2caa2c4d683883b40978339384cd6712
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: WeaponIcons_3
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 52
+      y: 4
+      width: 14
+      height: 14
+    spriteID: 43dd9d145a4fd8a40a4904cb082217e4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: WeaponIcons_4
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 68
+      y: 4
+      width: 14
+      height: 14
+    spriteID: a18f328fb2f1c2b4087eaba8df23780a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: WeaponIcons_5
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 4
+      width: 14
+      height: 14
+    spriteID: 9892f4ee24ba8d44097b12d1fdcac5dc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: WeaponIcons_6
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 100
+      y: 4
+      width: 14
+      height: 14
+    spriteID: 2d7dd56be0637c542b586ca0162d81f6
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -162,20 +282,76 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   asepriteLayers:
   - layerIndex: 0
-    guid: -1428297728
-    name: Stage
+    guid: 1472831272
+    name: Button-Prompts
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Stage
+    - name: Button-Prompts_Frame_0
       frameIndex: 0
       cellRect:
-        x: 0
+        x: 2
         y: 0
-        width: 960
-        height: 180
-      spriteId: 996763a8963ddf30c89c6601bbf3306e
+        width: 12
+        height: 15
+      spriteId: da28d588d64783c29b9f733c14db6b5e
+    - name: Button-Prompts_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 2
+        y: 0
+        width: 12
+        height: 12
+      spriteId: 0b30a9182f49eee67a65c621e9db0624
+    - name: Button-Prompts_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 2
+        y: 0
+        width: 12
+        height: 15
+      spriteId: 1e1b6b3116ef5e9049c48497ee2838e3
+    - name: Button-Prompts_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 2
+        y: 0
+        width: 12
+        height: 12
+      spriteId: 6650c1892f6fc2ebf852f3584735987a
+    - name: Button-Prompts_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 2
+        y: 0
+        width: 12
+        height: 15
+      spriteId: 6d546cfdab3a48608bfe9ea722106179
+    - name: Button-Prompts_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 2
+        y: 0
+        width: 12
+        height: 12
+      spriteId: 3ee031a786be9a95a895a0c683a523b4
+    - name: Button-Prompts_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 2
+        y: 0
+        width: 12
+        height: 15
+      spriteId: ba124b9ae5d605fb7b5b8a180acd2985
+    - name: Button-Prompts_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 2
+        y: 0
+        width: 12
+        height: 12
+      spriteId: 067132057aab52c699bb0e8a97509566
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -241,4 +417,4 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 960, y: 180}
+  canvasSize: {x: 16, y: 16}
