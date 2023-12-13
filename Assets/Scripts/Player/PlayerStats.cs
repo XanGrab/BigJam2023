@@ -1,30 +1,34 @@
+using System;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
-public class PlayerStats : Singleton<PlayerStats>
-{
+public class PlayerStats : Singleton<PlayerStats>{
     [SerializeField] private float maxHp;
     private float currHp;
 
+    public event Action onHPChange;
+    public UnityEvent onStatsReady;
+
     // Start is called before the first frame update
-    void Start()
-    {
-        //Healthbar.Instance.UpdateMaxHP(maxHp);
+    void Start() {
         currHp = maxHp;
+        onStatsReady.Invoke();
     }
 
-    public void TakeDamage(int _dmg)
-    {
-        currHp = Mathf.Max(0, currHp - _dmg);
+    public float getMaxHP() => maxHp;
+    public float getCurrHp() => currHp;
 
-        Healthbar.Instance.UpdateHPBar(currHp / maxHp);
+    public void TakeDamage(float _dmg) {
+        currHp = Mathf.Max(0, currHp - _dmg);
 
         if (currHp <= 0)
             Die();
+        onHPChange?.Invoke();
     }
 
-    private void Die()
-    {
-
+    private void Die() {
+        SceneManager.LoadScene("GameOver");
     }
 
     /// <summary>
@@ -32,24 +36,13 @@ public class PlayerStats : Singleton<PlayerStats>
     /// </summary>
     /// <param name="_heal"> amount of health to heal </param>
     /// <returns> true if the healing was successful, false if the player is already at full hp.</returns>
-    public bool Heal(int _heal)
+    public bool Heal(float _heal)
     {
         if (currHp == maxHp)
             return false;
-
         currHp = Mathf.Min(maxHp, currHp + _heal);
 
-        Healthbar.Instance.UpdateHPBar(currHp / maxHp);
-
+        onHPChange?.Invoke();
         return true;
-    }
-
-    public void MaxHpUp()
-    {
-        maxHp++;
-        currHp++;
-
-        Healthbar.Instance.UpdateMaxHP(maxHp);
-        Healthbar.Instance.UpdateHPBar(currHp / maxHp);
     }
 }

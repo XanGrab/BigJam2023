@@ -1,15 +1,19 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : Singleton<PlayerController> {
+public class PlayerController : Singleton<PlayerController>
+{
     [Header("External References")]
     [SerializeField] private GameObject afterimagePrefab;
 
     [Header("Self-References")]
-    [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private BoxCollider2D col;
+    [SerializeField] private Rigidbody rb;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Animator anim;
     [SerializeField] private Animator boom_anim;
+    [SerializeField] private Transform attackParent;
+    [SerializeField] private List<Transform> raycastPoints;
+    [SerializeField] private float raycastHeight;
 
     private PlayerAnimStateEnum currentAnimation;
 
@@ -23,9 +27,10 @@ public class PlayerController : Singleton<PlayerController> {
     }
 
     [Header("Parameters")]
-    [SerializeField] private float accelSpeed;
-    [SerializeField] private float frictionSpeed_Ground;
-    [SerializeField] private float frictionSpeed_Air;
+    [SerializeField] private float accelSpeed_ground;
+    [SerializeField] private float accelSpeed_air;
+    [SerializeField] private float frictionSpeed_ground;
+    [SerializeField] private float frictionSpeed_air;
     [SerializeField] private float maxSpeed;
     [SerializeField] private float jumpPower;
     [Space(5)]
@@ -35,7 +40,6 @@ public class PlayerController : Singleton<PlayerController> {
     [Space(5)]
     [SerializeField] private LayerMask terrainLayer;
 
-    private float xSpeed = 0;
     private bool grounded = false;
     private bool useGravity = true;
     private float lastTimePressedJump = -100.0f;
@@ -50,67 +54,115 @@ public class PlayerController : Singleton<PlayerController> {
     #endregion
 
     /// <returns>/// Returns if the player is currently able to move (not attacking, dashing, stunned, etc.)</returns>
-    private bool CanMove => ( true );
+    private bool CanMove => (true);
 
-    private void Update() {
+    // Start is called before the first frame update
+    void Start()
+    {
 
-        if (CanMove) {
-            //Accelerate + Friction
-            float inputX = InputHandler.Instance.Direction.x;
+    }
 
-            if (inputX < -epsilon) //Pressing left
+    private void Update()
+    {
+        if (CanMove)
+        {
+            #region Acceleration
+            //Get gravityless velocity
+            Vector3 noGravVelocity = rb.velocity;
+            noGravVelocity.y = 0;
+
+            //Convert global velocity to local velocity
+            Vector3 velocity_local = noGravVelocity;
+
+            //XZ Friction + acceleration
+            Vector3 currInput = new Vector3(InputHandler.Instance.Direction.x, 0, InputHandler.Instance.Direction.y);
+
+            if (currInput.magnitude > 0.05f)
+                currInput.Normalize();
+            if (grounded)
             {
-                if (xSpeed > -maxSpeed)
+                //Apply ground fricion
+                Vector3 velocity_local_friction = velocity_local.normalized * Mathf.Max(0, velocity_local.magnitude - frictionSpeed_ground * Time.deltaTime);
+
+                Vector3 updatedVelocity = velocity_local_friction;
+
+                if (currInput.magnitude > 0.05f) //Pressing something, try to accelerate
                 {
-                    //Can still accelerate to the left (but do not exceed max)
-                    xSpeed = Mathf.Max(-maxSpeed, xSpeed + accelSpeed * inputX * Time.deltaTime);
-                }
-                else
-                {
-                    //Apply friction for when moving over max speed
-                    if (grounded)
-                        xSpeed = Mathf.Min(xSpeed + frictionSpeed_Ground * Time.deltaTime, -maxSpeed);
+                    Vector3 velocity_local_input = velocity_local_friction + accelSpeed_ground * Time.deltaTime * currInput;
+
+                    if (velocity_local_friction.magnitude <= maxSpeed)
+                    {
+                        //under max speed, accelerate towards max speed
+                        updatedVelocity = velocity_local_input.normalized * Mathf.Min(maxSpeed, velocity_local_input.magnitude);
+                    }
                     else
-                        xSpeed = Mathf.Min(xSpeed + frictionSpeed_Air * Time.deltaTime, -maxSpeed);
+                    {
+                        //over max speed
+                        if (velocity_local_input.magnitude <= maxSpeed) //Use new direction, would go less than max speed
+                        {
+                            updatedVelocity = velocity_local_input;
+                        }
+                        else //Would stay over max speed, use vector with smaller magnitude
+                        {
+                            //Would accelerate more, so don't user player input
+                            if (velocity_local_input.magnitude > velocity_local_friction.magnitude)
+                                updatedVelocity = velocity_local_friction;
+                            else
+                                //Would accelerate less, user player input (input moves velocity more to 0,0 than just friciton)
+                                updatedVelocity = velocity_local_input;
+                        }
+                    }
                 }
+
+                //Convert local velocity to global velocity
+                rb.velocity = new Vector3(0, rb.velocity.y, 0) + transform.TransformDirection(updatedVelocity);
             }
             else
             {
-                if (inputX > epsilon) //Pressing right
-                {
-                    if (xSpeed < maxSpeed)
-                    {
-                        //Can still accelerate to the right (but do not exceed max)
-                        xSpeed = Mathf.Min(maxSpeed, xSpeed + accelSpeed * inputX * Time.deltaTime);
-                    }
-                    else
-                    {
-                        //Apply friction for when moving over max speed
-                        if (grounded)
-                            xSpeed = Mathf.Max(xSpeed - frictionSpeed_Ground * Time.deltaTime, maxSpeed);
-                        else
-                            xSpeed = Mathf.Max(xSpeed - frictionSpeed_Air * Time.deltaTime, maxSpeed);
-                    }
-                }
-                else //pressing nothing
-                {
-                    //Get sign of current speed
-                    float sign = 1;
-                    if (xSpeed < 0)
-                        sign = -1;
+                //Apply air fricion
+                Vector3 velocity_local_friction = velocity_local.normalized * Mathf.Max(0, velocity_local.magnitude - frictionSpeed_air);
 
-                    //Not pressing anything, subtract friction and update speed
-                    float newSpeedMagnitude;
-                    if (grounded)
-                        newSpeedMagnitude = Mathf.Max(0, Mathf.Abs(xSpeed) - frictionSpeed_Ground * Time.deltaTime);
+                Vector3 updatedVelocity = velocity_local_friction;
+
+                if (currInput.magnitude > 0.05f) //Pressing something, try to accelerate
+                {
+                    Vector3 velocity_local_with_input = velocity_local_friction + currInput * accelSpeed_air;
+
+                    if (velocity_local_friction.magnitude <= maxSpeed)
+                    {
+                        //under max speed, accelerate towards max speed
+                        updatedVelocity = velocity_local_with_input.normalized * Mathf.Min(maxSpeed, velocity_local_with_input.magnitude);
+                    }
                     else
-                        newSpeedMagnitude = Mathf.Max(0, Mathf.Abs(xSpeed) - frictionSpeed_Air * Time.deltaTime);
-                    xSpeed = newSpeedMagnitude * sign;
+                    {
+                        //over max speed
+                        if (velocity_local_with_input.magnitude <= maxSpeed) //Use new direction, would go less than max speed
+                        {
+                            updatedVelocity = velocity_local_with_input;
+                        }
+                        else //Would stay over max speed, use vector with smaller magnitude
+                        {
+                            // Debug.Log("withotInput: " + velocity_local.magnitude);
+                            // Debug.Log(velocity_local);
+                            // Debug.Log("input: " + velocity_local_with_input.magnitude);
+                            // Debug.Log(velocity_local_with_input);
+                            // Debug.Log("friction: " + velocity_local_friction.magnitude);
+                            // Debug.Log(velocity_local_friction);
+
+                            //Would accelerate more, so don't user player input
+                            if (velocity_local_with_input.magnitude > velocity_local_friction.magnitude)
+                                updatedVelocity = velocity_local_friction;
+                            else
+                                //Would accelerate less, user player input (input moves velocity more to 0,0 than just friciton)
+                                updatedVelocity = velocity_local_with_input;
+                        }
+                    }
                 }
+
+                //Convert local velocity to global velocity
+                rb.velocity = new Vector3(0, rb.velocity.y, 0) + updatedVelocity;
             }
-
-            //Set velocity
-            rb.velocity = new Vector2(xSpeed, rb.velocity.y);
+            #endregion
         }
 
 
@@ -135,9 +187,9 @@ public class PlayerController : Singleton<PlayerController> {
         if (useGravity)
         {
             if (InputHandler.Instance.Jump.Holding && rb.velocity.y > 0)
-                rb.velocity -= new Vector2(0, gravUp * Time.deltaTime);
+                rb.velocity -= new Vector3(0, gravUp * Time.deltaTime, 0);
             else
-                rb.velocity -= new Vector2(0, gravDown * Time.deltaTime);
+                rb.velocity -= new Vector3(0, gravDown * Time.deltaTime, 0);
         }
 
         //Set animation states
@@ -160,8 +212,19 @@ public class PlayerController : Singleton<PlayerController> {
     {
         //Ground checking
         bool lastGrounded = grounded;
-        grounded = (rb.velocity.y < 1.0f) && Physics2D.BoxCast(col.bounds.center, col.bounds.size * 0.99f, 0f, Vector2.down, 0.1f, terrainLayer);
 
+        #region determine if player is grounded or not
+        grounded = false; //number of raycasts that hit the ground 
+
+        foreach (Transform point in raycastPoints)
+        {
+            if (Physics.Raycast(point.position, -transform.up, out RaycastHit hit, raycastHeight, terrainLayer))
+            {
+                grounded = true;
+                break;
+            }
+        }
+        #endregion
 
         //Get last time grounded
         if ((lastGrounded == true) && (grounded == false))
@@ -185,26 +248,22 @@ public class PlayerController : Singleton<PlayerController> {
         //Boom attack
         if (InputHandler.Instance.LightAttack.Pressed)
         {
-            float angle;
+            float xScale = 1;
 
             if (InputHandler.Instance.Direction.magnitude > epsilon)
             {
                 //Attack in the held direction
-                angle = Mathf.Atan2(InputHandler.Instance.Direction.y, InputHandler.Instance.Direction.x);
-                angle = Mathf.Rad2Deg * angle;
-
-                angle = Mathf.RoundToInt(angle / 90.0f) * 90.0f;
+                if (InputHandler.Instance.Direction.x < 0)
+                    xScale = -1;
             }
             else
             {
                 //Attack in the faced direction (horizontally)
-                if (!spriteRenderer.flipX)
-                    angle = 0;
-                else
-                    angle = 180;
+                if (spriteRenderer.flipX)
+                    xScale = -1;
             }
 
-            boom_anim.transform.eulerAngles = new Vector3(0, 0, angle);
+            attackParent.localScale = new Vector3(xScale, 1, 1);
 
             boom_anim.SetTrigger("Boom");
         }

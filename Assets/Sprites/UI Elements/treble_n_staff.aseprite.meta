@@ -121,15 +121,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: treble_n_staff
     originalName: 
-    pivot: {x: 0.48809528, y: -0.045454547}
+    pivot: {x: 0.48876405, y: -0.11538462}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 168
-      height: 44
+      width: 178
+      height: 52
     spriteID: f9c2d78aefaf0c565a8c363c5ffaf9af
     spriteBone: []
     spriteOutline: []
@@ -139,6 +139,1086 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: treble_n_staff_Frame_1
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 190
+      y: 4
+      width: 178
+      height: 52
+    spriteID: 021fa699adb2b60d5976e2fc5bb50ec2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 190, y: 4}
+  - name: treble_n_staff_Frame_2
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 376
+      y: 4
+      width: 178
+      height: 52
+    spriteID: 8fc4dc2e08e917b64be4fd7d90a9cc9f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 376, y: 4}
+  - name: treble_n_staff_Frame_3
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 562
+      y: 4
+      width: 178
+      height: 52
+    spriteID: 443aee17766bc869ca0eb0bb6593a862
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 562, y: 4}
+  - name: treble_n_staff_Frame_4
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 748
+      y: 4
+      width: 178
+      height: 52
+    spriteID: 04a4a7226eff6b1dcb96e5538c6a9624
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 748, y: 4}
+  - name: treble_n_staff_Frame_5
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 64
+      width: 178
+      height: 52
+    spriteID: f8cc1b2b0fc5e94d69cdb4211376b1d1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 64}
+  - name: treble_n_staff_Frame_6
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 190
+      y: 64
+      width: 178
+      height: 52
+    spriteID: 9a502f12bb4ada704b1684b43c5acad8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 190, y: 64}
+  - name: treble_n_staff_Frame_7
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 376
+      y: 64
+      width: 178
+      height: 52
+    spriteID: 29622cc3dc5d0265cbd5b6e5f096106b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 376, y: 64}
+  - name: treble_n_staff_Frame_8
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 562
+      y: 64
+      width: 178
+      height: 52
+    spriteID: bef3adb90ef140bc18d368fcf6c72727
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 562, y: 64}
+  - name: treble_n_staff_Frame_9
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 748
+      y: 64
+      width: 178
+      height: 52
+    spriteID: da03d183153dd03d486999d2c5609ecc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 748, y: 64}
+  - name: treble_n_staff_Frame_10
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 124
+      width: 178
+      height: 52
+    spriteID: 43fd0ad1a801a80a9af96414b3aa915c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 124}
+  - name: treble_n_staff_Frame_11
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 190
+      y: 124
+      width: 178
+      height: 52
+    spriteID: 3d49b5ed2d1c5ae28b8ab6b5c599b235
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 190, y: 124}
+  - name: treble_n_staff_Frame_12
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 376
+      y: 124
+      width: 178
+      height: 52
+    spriteID: 6e264d15f529f7150a8d1575faa4fb85
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 376, y: 124}
+  - name: treble_n_staff_Frame_13
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 562
+      y: 124
+      width: 178
+      height: 52
+    spriteID: c00de8aa8624ec709a8058ed46bcdcc7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 562, y: 124}
+  - name: treble_n_staff_Frame_14
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 748
+      y: 124
+      width: 178
+      height: 52
+    spriteID: 14a7f10a821b7b5d7bf2583280651013
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 748, y: 124}
+  - name: treble_n_staff_Frame_15
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 184
+      width: 178
+      height: 52
+    spriteID: b1fe79a609d21c208a0413800b6ebb33
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 184}
+  - name: treble_n_staff_Frame_16
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 190
+      y: 184
+      width: 178
+      height: 52
+    spriteID: be83186e604272dea8d019f6e28e3f38
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 190, y: 184}
+  - name: treble_n_staff_Frame_17
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 376
+      y: 184
+      width: 178
+      height: 52
+    spriteID: bdeda5c6240c988b483779f504259334
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 376, y: 184}
+  - name: treble_n_staff_Frame_18
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 562
+      y: 184
+      width: 178
+      height: 52
+    spriteID: af0ff29fd44b25f00b9e9bbe59d0b926
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 562, y: 184}
+  - name: treble_n_staff_Frame_19
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 748
+      y: 184
+      width: 178
+      height: 52
+    spriteID: c1985b4eb19bfde79992d0a58207040e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 748, y: 184}
+  - name: treble_n_staff_Frame_20
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 244
+      width: 178
+      height: 52
+    spriteID: 558f5f8a13b916b25a835181ffac73bf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 244}
+  - name: treble_n_staff_Frame_21
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 190
+      y: 244
+      width: 178
+      height: 52
+    spriteID: c92b70cfe36089bd8bfdbfa6a208edf2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 190, y: 244}
+  - name: treble_n_staff_Frame_22
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 376
+      y: 244
+      width: 178
+      height: 52
+    spriteID: f144c8ee6060e35f6810c814dc6088a9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 376, y: 244}
+  - name: treble_n_staff_Frame_23
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 562
+      y: 244
+      width: 178
+      height: 52
+    spriteID: f3508a61adf33a3199886023a7e5268e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 562, y: 244}
+  - name: treble_n_staff_Frame_24
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 748
+      y: 244
+      width: 178
+      height: 52
+    spriteID: 4bf35beb75a92e4b29e86a2b2b78dc84
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 748, y: 244}
+  - name: treble_n_staff_Frame_25
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 304
+      width: 178
+      height: 52
+    spriteID: 089529f5700420ffba79259746f768d5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 304}
+  - name: treble_n_staff_Frame_26
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 190
+      y: 304
+      width: 178
+      height: 52
+    spriteID: d037510907b1afd7ba63af09fc609eef
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 190, y: 304}
+  - name: treble_n_staff_Frame_27
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 376
+      y: 304
+      width: 178
+      height: 52
+    spriteID: 40f8f55c44d23d86b930fd92157a6bf9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 376, y: 304}
+  - name: treble_n_staff_Frame_28
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 562
+      y: 304
+      width: 178
+      height: 52
+    spriteID: c0c38a6a09c90e75cac80f68ccf365ca
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 562, y: 304}
+  - name: treble_n_staff_Frame_29
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 748
+      y: 304
+      width: 178
+      height: 52
+    spriteID: 61e39fb45ef2ea810b35f3a14a7aa870
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 748, y: 304}
+  - name: treble_n_staff_Frame_30
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 364
+      width: 178
+      height: 52
+    spriteID: dc021058f86e9bcebbc8dfc070db81e5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 364}
+  - name: treble_n_staff_Frame_31
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 190
+      y: 364
+      width: 178
+      height: 52
+    spriteID: 149f392d200fd31fa82254110655e2a8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 190, y: 364}
+  - name: treble_n_staff_Frame_32
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 376
+      y: 364
+      width: 178
+      height: 52
+    spriteID: 59cea37c099a999db9392f1e01f5f891
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 376, y: 364}
+  - name: treble_n_staff_Frame_33
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 562
+      y: 364
+      width: 178
+      height: 52
+    spriteID: 0f641c9017bb00d11899f186d4c3b0b0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 562, y: 364}
+  - name: treble_n_staff_Frame_34
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 748
+      y: 364
+      width: 178
+      height: 52
+    spriteID: a1d0ef80744ed301094aa7486c901c6d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 748, y: 364}
+  - name: treble_n_staff_Frame_35
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 424
+      width: 178
+      height: 52
+    spriteID: 9d85fae279e9f41da88f6408d3e571e5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 424}
+  - name: treble_n_staff_Frame_36
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 190
+      y: 424
+      width: 178
+      height: 52
+    spriteID: 6bcaa2a02403c37a78c0b001d4e5904f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 190, y: 424}
+  - name: treble_n_staff_Frame_37
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 376
+      y: 424
+      width: 178
+      height: 52
+    spriteID: 663191ba76891ede8acd4c5abe5018b1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 376, y: 424}
+  - name: treble_n_staff_Frame_38
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 562
+      y: 424
+      width: 178
+      height: 52
+    spriteID: ed7a068751a23a99590850a136078b90
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 562, y: 424}
+  - name: treble_n_staff_Frame_39
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 748
+      y: 424
+      width: 178
+      height: 52
+    spriteID: dd87b9479d708e4f9b03fd2c9ab7e280
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 748, y: 424}
+  - name: treble_n_staff_Frame_40
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 484
+      width: 178
+      height: 52
+    spriteID: 1e7bcd7ac0abeb31ab81dd82bfdd5535
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 484}
+  - name: treble_n_staff_Frame_41
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 190
+      y: 484
+      width: 178
+      height: 52
+    spriteID: fcb0471173dbcf7fab57227306cc56ac
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 190, y: 484}
+  - name: treble_n_staff_Frame_42
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 376
+      y: 484
+      width: 178
+      height: 52
+    spriteID: 09c8efb7dd399f96db2b45d4b3176b9a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 376, y: 484}
+  - name: treble_n_staff_Frame_43
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 562
+      y: 484
+      width: 178
+      height: 52
+    spriteID: 192f3a623eae16388a56c4b631ef9617
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 562, y: 484}
+  - name: treble_n_staff_Frame_44
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 748
+      y: 484
+      width: 178
+      height: 52
+    spriteID: 5ddb76848c07dd4ce9e26bccd78c112f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 748, y: 484}
+  - name: treble_n_staff_Frame_45
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 544
+      width: 178
+      height: 52
+    spriteID: ffa4de78af13998a9a83625d0505809a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 544}
+  - name: treble_n_staff_Frame_46
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 190
+      y: 544
+      width: 178
+      height: 52
+    spriteID: c3d4f544ca2b82520952f21c5776e4a2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 190, y: 544}
+  - name: treble_n_staff_Frame_47
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 376
+      y: 544
+      width: 178
+      height: 52
+    spriteID: da9f6c49b448b14fdbe32ac439d8e851
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 376, y: 544}
+  - name: treble_n_staff_Frame_48
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 562
+      y: 544
+      width: 178
+      height: 52
+    spriteID: e151626bd46e73e90a47d33c10b9eb2a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 562, y: 544}
+  - name: treble_n_staff_Frame_49
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 748
+      y: 544
+      width: 178
+      height: 52
+    spriteID: da4e6b428fb62950e95802d28e5701b7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 748, y: 544}
+  - name: treble_n_staff_Frame_50
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 604
+      width: 178
+      height: 52
+    spriteID: ba56018eafe1b4e789a6c6758aaeb2fa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 604}
+  - name: treble_n_staff_Frame_51
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 190
+      y: 604
+      width: 178
+      height: 52
+    spriteID: bdffd74c06597e2ee8b1be6d1d5d5662
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 190, y: 604}
+  - name: treble_n_staff_Frame_52
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 376
+      y: 604
+      width: 178
+      height: 52
+    spriteID: 1e57dcd0dadaf53d3afe2ed539271255
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 376, y: 604}
+  - name: treble_n_staff_Frame_53
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 562
+      y: 604
+      width: 178
+      height: 52
+    spriteID: ba7652337a6993d149dfce750d8a7090
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 562, y: 604}
+  - name: treble_n_staff_Frame_54
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 748
+      y: 604
+      width: 178
+      height: 52
+    spriteID: 46e87011d4eaa50cf8dec60faba9914c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 748, y: 604}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -148,17 +1228,449 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: treble_n_staff
+    - name: treble_n_staff_Frame_0
       frameIndex: 0
       cellRect:
-        x: 14
-        y: 2
-        width: 168
-        height: 44
+        x: 9
+        y: 6
+        width: 178
+        height: 52
       spriteId: f9c2d78aefaf0c565a8c363c5ffaf9af
+    - name: treble_n_staff_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: 021fa699adb2b60d5976e2fc5bb50ec2
+    - name: treble_n_staff_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: 8fc4dc2e08e917b64be4fd7d90a9cc9f
+    - name: treble_n_staff_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: 443aee17766bc869ca0eb0bb6593a862
+    - name: treble_n_staff_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: 04a4a7226eff6b1dcb96e5538c6a9624
+    - name: treble_n_staff_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: f8cc1b2b0fc5e94d69cdb4211376b1d1
+    - name: treble_n_staff_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: 9a502f12bb4ada704b1684b43c5acad8
+    - name: treble_n_staff_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: 29622cc3dc5d0265cbd5b6e5f096106b
+    - name: treble_n_staff_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: bef3adb90ef140bc18d368fcf6c72727
+    - name: treble_n_staff_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: da03d183153dd03d486999d2c5609ecc
+    - name: treble_n_staff_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: 43fd0ad1a801a80a9af96414b3aa915c
+    - name: treble_n_staff_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: 3d49b5ed2d1c5ae28b8ab6b5c599b235
+    - name: treble_n_staff_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: 6e264d15f529f7150a8d1575faa4fb85
+    - name: treble_n_staff_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: c00de8aa8624ec709a8058ed46bcdcc7
+    - name: treble_n_staff_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: 14a7f10a821b7b5d7bf2583280651013
+    - name: treble_n_staff_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: b1fe79a609d21c208a0413800b6ebb33
+    - name: treble_n_staff_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: be83186e604272dea8d019f6e28e3f38
+    - name: treble_n_staff_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: bdeda5c6240c988b483779f504259334
+    - name: treble_n_staff_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: af0ff29fd44b25f00b9e9bbe59d0b926
+    - name: treble_n_staff_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: c1985b4eb19bfde79992d0a58207040e
+    - name: treble_n_staff_Frame_20
+      frameIndex: 20
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: 558f5f8a13b916b25a835181ffac73bf
+    - name: treble_n_staff_Frame_21
+      frameIndex: 21
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: c92b70cfe36089bd8bfdbfa6a208edf2
+    - name: treble_n_staff_Frame_22
+      frameIndex: 22
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: f144c8ee6060e35f6810c814dc6088a9
+    - name: treble_n_staff_Frame_23
+      frameIndex: 23
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: f3508a61adf33a3199886023a7e5268e
+    - name: treble_n_staff_Frame_24
+      frameIndex: 24
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: 4bf35beb75a92e4b29e86a2b2b78dc84
+    - name: treble_n_staff_Frame_25
+      frameIndex: 25
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: 089529f5700420ffba79259746f768d5
+    - name: treble_n_staff_Frame_26
+      frameIndex: 26
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: d037510907b1afd7ba63af09fc609eef
+    - name: treble_n_staff_Frame_27
+      frameIndex: 27
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: 40f8f55c44d23d86b930fd92157a6bf9
+    - name: treble_n_staff_Frame_28
+      frameIndex: 28
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: c0c38a6a09c90e75cac80f68ccf365ca
+    - name: treble_n_staff_Frame_29
+      frameIndex: 29
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: 61e39fb45ef2ea810b35f3a14a7aa870
+    - name: treble_n_staff_Frame_30
+      frameIndex: 30
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: dc021058f86e9bcebbc8dfc070db81e5
+    - name: treble_n_staff_Frame_31
+      frameIndex: 31
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: 149f392d200fd31fa82254110655e2a8
+    - name: treble_n_staff_Frame_32
+      frameIndex: 32
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: 59cea37c099a999db9392f1e01f5f891
+    - name: treble_n_staff_Frame_33
+      frameIndex: 33
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: 0f641c9017bb00d11899f186d4c3b0b0
+    - name: treble_n_staff_Frame_34
+      frameIndex: 34
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: a1d0ef80744ed301094aa7486c901c6d
+    - name: treble_n_staff_Frame_35
+      frameIndex: 35
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: 9d85fae279e9f41da88f6408d3e571e5
+    - name: treble_n_staff_Frame_36
+      frameIndex: 36
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: 6bcaa2a02403c37a78c0b001d4e5904f
+    - name: treble_n_staff_Frame_37
+      frameIndex: 37
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: 663191ba76891ede8acd4c5abe5018b1
+    - name: treble_n_staff_Frame_38
+      frameIndex: 38
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: ed7a068751a23a99590850a136078b90
+    - name: treble_n_staff_Frame_39
+      frameIndex: 39
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: dd87b9479d708e4f9b03fd2c9ab7e280
+    - name: treble_n_staff_Frame_40
+      frameIndex: 40
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: 1e7bcd7ac0abeb31ab81dd82bfdd5535
+    - name: treble_n_staff_Frame_41
+      frameIndex: 41
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: fcb0471173dbcf7fab57227306cc56ac
+    - name: treble_n_staff_Frame_42
+      frameIndex: 42
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: 09c8efb7dd399f96db2b45d4b3176b9a
+    - name: treble_n_staff_Frame_43
+      frameIndex: 43
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: 192f3a623eae16388a56c4b631ef9617
+    - name: treble_n_staff_Frame_44
+      frameIndex: 44
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: 5ddb76848c07dd4ce9e26bccd78c112f
+    - name: treble_n_staff_Frame_45
+      frameIndex: 45
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: ffa4de78af13998a9a83625d0505809a
+    - name: treble_n_staff_Frame_46
+      frameIndex: 46
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: c3d4f544ca2b82520952f21c5776e4a2
+    - name: treble_n_staff_Frame_47
+      frameIndex: 47
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: da9f6c49b448b14fdbe32ac439d8e851
+    - name: treble_n_staff_Frame_48
+      frameIndex: 48
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: e151626bd46e73e90a47d33c10b9eb2a
+    - name: treble_n_staff_Frame_49
+      frameIndex: 49
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: da4e6b428fb62950e95802d28e5701b7
+    - name: treble_n_staff_Frame_50
+      frameIndex: 50
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: ba56018eafe1b4e789a6c6758aaeb2fa
+    - name: treble_n_staff_Frame_51
+      frameIndex: 51
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: bdffd74c06597e2ee8b1be6d1d5d5662
+    - name: treble_n_staff_Frame_52
+      frameIndex: 52
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: 1e57dcd0dadaf53d3afe2ed539271255
+    - name: treble_n_staff_Frame_53
+      frameIndex: 53
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: ba7652337a6993d149dfce750d8a7090
+    - name: treble_n_staff_Frame_54
+      frameIndex: 54
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: 46e87011d4eaa50cf8dec60faba9914c
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 192, y: 48}
+  canvasSize: {x: 192, y: 64}

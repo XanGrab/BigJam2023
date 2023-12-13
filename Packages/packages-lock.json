@@ -160,6 +160,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.unity.ide.vscode": {
+      "version": "1.2.5",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
     "com.unity.inputsystem": {
       "version": "1.7.0",
       "depth": 0,
@@ -299,6 +306,13 @@
         "com.unity.modules.jsonserialize": "1.0.0"
       },
       "url": "https://packages.unity.com"
+    },
+    "com.xangrab.common-reusables": {
+      "version": "https://github.com/XanGrab/Unity-Common-Systems.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "096cee5d33d119a4adf60a8f07f68be69a12c46b"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
