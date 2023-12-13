@@ -30,7 +30,8 @@ public class MainMenu : MonoBehaviour {
                     Debug.Log("Debug [MainMenu] navIndex " + navIndex);
                     break;
                 case NavigationMoveEvent.Direction.Down: 
-                    navIndex = Math.Abs(navIndex - 1) % menuNav.Length;
+                    navIndex--;
+                    if (navIndex < 0) navIndex += menuNav.Length;
                     menuNav[navIndex].Focus(); 
                     Debug.Log("Debug [MainMenu] navIndex " + navIndex);
                     break;

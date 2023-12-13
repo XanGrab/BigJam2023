@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5bccfa1fc037c336d9e0a23a7c350b63
+guid: e4bb4e936b2d22924a1a4689be3eb9b1
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -140,7 +140,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
   spriteSheetImportData:
-  - name: GameOver
+  - name: Game Over
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -160,22 +160,50 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
+  - name: Main Menu
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 192
+      width: 320
+      height: 180
+    spriteID: 4b874488aa6a0a4488c5069a61e610fd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
   asepriteLayers:
   - layerIndex: 0
-    guid: 791674694
-    name: GameOver
+    guid: 367179110
+    name: MenuBackgrounds
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: GameOver
+    - name: MenuBackgrounds_Frame_0
       frameIndex: 0
       cellRect:
         x: 0
         y: 0
-        width: 945
+        width: 320
         height: 180
-      spriteId: e2112b0db6d8ec862aae602fa6bba15d
+      spriteId: 9c09f74bcb53e2a3ba62cc5ea0b755f9
+    - name: MenuBackgrounds_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 0
+        y: 0
+        width: 320
+        height: 180
+      spriteId: 1f944e7d4650c2c94b191581f1438ec2
     linkedCells: []
     parentIndex: -1
   platformSettings:
