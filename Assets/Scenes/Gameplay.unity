@@ -388,7 +388,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 119298839}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -764,7 +764,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 7.1041665
+  orthographic size: 5.625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -789,7 +789,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0.38268343, y: -0, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: -17.6, y: 5, z: -10}
+  m_LocalPosition: {x: 0, y: 5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -828,12 +828,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91bc0d4d66c8b3d4e96cf22113bbeb89, type: 3}
+  m_Script: {fileID: 11500000, guid: 979e69e58d99789f3ae6ddcef43579fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minX: -17.5
-  maxX: 17.5
   target: {fileID: 2130536829}
+  minX: -19.5
+  maxX: 19.5
+  offset: {x: 0, y: 5, z: -10}
 --- !u!1 &550907659
 GameObject:
   m_ObjectHideFlags: 0
@@ -5749,7 +5750,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1243578992}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -5915,7 +5916,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1268346128}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -5996,7 +5997,7 @@ Transform:
   m_GameObject: {fileID: 1892218963}
   serializedVersion: 2
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: -11.77, z: 6.68}
+  m_LocalPosition: {x: 0, y: -11.69, z: 6.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6167,7 +6168,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2037167507}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -6414,6 +6415,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 2119162302, guid: b6817283a8df2654bb84b1fb4dfcf1e2, type: 3}
+    - target: {fileID: 1361161468258019241, guid: 2be64614cb261b748869ac28959b8315, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1877333391414482562, guid: 2be64614cb261b748869ac28959b8315, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -6437,6 +6442,10 @@ PrefabInstance:
     - target: {fileID: 2585460984887775189, guid: 2be64614cb261b748869ac28959b8315, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073242901404600230, guid: 2be64614cb261b748869ac28959b8315, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5140361010672441766, guid: 2be64614cb261b748869ac28959b8315, type: 3}
       propertyPath: m_Center.y
@@ -6553,7 +6562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2634640655617729200, guid: cd8f808da418c66419dc9f90c8bf3664, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7787982980366247829, guid: cd8f808da418c66419dc9f90c8bf3664, type: 3}
       propertyPath: m_Layer
