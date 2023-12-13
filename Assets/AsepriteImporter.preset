@@ -338,7 +338,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_AsepriteImporterSettings.m_FileImportMode
-    value: 0
+    value: 1
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_AsepriteImporterSettings.m_ImportHiddenLayers
@@ -354,7 +354,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_AsepriteImporterSettings.m_DefaultPivotAlignment
-    value: 0
+    value: 7
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_AsepriteImporterSettings.m_CustomPivotPosition.x
@@ -390,7 +390,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_PlatformSettingsDirtyTick
-    value: 638368895796861313
+    value: 638380132749768379
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_TextureAssetName
