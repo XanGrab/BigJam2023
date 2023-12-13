@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour {
         menuNav = new Button[] { startButton, creditsButton };
 
         // register navigation logic
-        startButton.RegisterCallback<NavigationMoveEvent> (e => {
+        root.RegisterCallback<NavigationMoveEvent> (e => {
             e.PreventDefault();
             switch(e.direction) {
                 case NavigationMoveEvent.Direction.Up: 

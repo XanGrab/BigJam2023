@@ -19,7 +19,7 @@ public class GameOverMenu : MonoBehaviour {
         mainMenuButton = root.Q<Button>("Main-Menu-Button");
         menuNav = new Button[] { continueButton, mainMenuButton };
 
-        continueButton.RegisterCallback<NavigationMoveEvent> (e => {
+        root.RegisterCallback<NavigationMoveEvent> (e => {
             switch(e.direction) {
                 case NavigationMoveEvent.Direction.Left:
                     navIndex = (navIndex + 1) % menuNav.Length;
