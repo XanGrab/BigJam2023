@@ -18,8 +18,7 @@ public class PlayerController : Singleton<PlayerController>
     private PlayerAnimStateEnum currentAnimation;
 
     //Animation states
-    enum PlayerAnimStateEnum
-    {
+    enum PlayerAnimStateEnum {
         Player_Idle,
         Player_Jump_Up,
         Player_Jump_Down,
