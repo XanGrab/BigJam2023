@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
@@ -25,12 +24,13 @@ public class GameOverMenu : MonoBehaviour {
                 case NavigationMoveEvent.Direction.Left:
                     navIndex = (navIndex + 1) % menuNav.Length;
                     menuNav[navIndex].Focus(); 
-                    Debug.Log("Debug [MainMenu] navIndex " + navIndex);
+                    Debug.Log("Debug [GameOver] navIndex " + navIndex);
                     break;
                 case NavigationMoveEvent.Direction.Right:
-                    navIndex = Math.Abs(navIndex - 1) % menuNav.Length;
+                    navIndex--;
+                    if (navIndex < 0) navIndex += menuNav.Length;
                     menuNav[navIndex].Focus(); 
-                    Debug.Log("Debug [MainMenu] navIndex " + navIndex);
+                    Debug.Log("Debug [GameOver] navIndex " + navIndex);
                     break;
             }
             e.PreventDefault();
@@ -41,6 +41,6 @@ public class GameOverMenu : MonoBehaviour {
     }
     
     void ContinueButtonPress() => SceneManager.LoadScene("Gameplay");
-    void MainMenuButtonPress() => SceneManager.LoadScene("Main Menu");
+    void MainMenuButtonPress() => SceneManager.LoadScene("MainMenu");
 
 }

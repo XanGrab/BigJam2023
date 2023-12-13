@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : Singleton<PlayerStats>{
     [SerializeField] private float maxHp;
@@ -26,9 +27,8 @@ public class PlayerStats : Singleton<PlayerStats>{
         onHPChange?.Invoke();
     }
 
-    private void Die()
-    {
-
+    private void Die() {
+        SceneManager.LoadScene("GameOver");
     }
 
     /// <summary>
