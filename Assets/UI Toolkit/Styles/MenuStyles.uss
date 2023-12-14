@@ -20,7 +20,6 @@
     width: auto;
     -unity-font: url('project://database/Assets/Fonts/PixelClean.ttf?fileID=12800000&guid=0cb3d4e65972386beaab0fcd495d9592&type=3#PixelClean');
     -unity-font-style: normal;
-    font-size: 48px;
     border-left-color: rgba(149, 149, 149, 0);
     border-right-color: rgba(149, 149, 149, 0);
     border-top-color: rgba(149, 149, 149, 0);
@@ -35,7 +34,6 @@
     width: auto;
     -unity-font: url('project://database/Assets/Fonts/PixelClean.ttf?fileID=12800000&guid=0cb3d4e65972386beaab0fcd495d9592&type=3#PixelClean');
     -unity-font-style: normal;
-    font-size: 48px;
     border-left-color: rgba(149, 149, 149, 0);
     border-right-color: rgba(149, 149, 149, 0);
     border-top-color: rgba(149, 149, 149, 0);
@@ -50,7 +48,6 @@
     width: auto;
     -unity-font: url('project://database/Assets/Fonts/PixelClean.ttf?fileID=12800000&guid=0cb3d4e65972386beaab0fcd495d9592&type=3#PixelClean');
     -unity-font-style: normal;
-    font-size: 48px;
     border-left-color: rgba(149, 149, 149, 0);
     border-right-color: rgba(149, 149, 149, 0);
     border-top-color: rgba(149, 149, 149, 0);
