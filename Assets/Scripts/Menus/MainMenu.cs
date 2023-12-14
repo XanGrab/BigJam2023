@@ -7,15 +7,21 @@ public class MainMenu : MonoBehaviour
 {
     private UIDocument menu;
 
+    [SerializeField] private VisualTreeAsset[] Menus;
+
     private Button startButton;
     private Button creditsButton;
+    private Button creditsBackButton;
 
     private Button[] menuNav = new Button[2];
     private int navIndex = 0;
+    
+    void Start() {
+        SetUpMainMenu();
+    }
 
-    void Start()
-    {
-        menu = GetComponent<UIDocument>();
+    void SetUpMainMenu() {
+        menu = GetComponent<UIDocument>(); 
         var root = menu.rootVisualElement;
         startButton = root.Q<Button>("Start-Button");
         creditsButton = root.Q<Button>("Credits-Button");
@@ -47,9 +53,26 @@ public class MainMenu : MonoBehaviour
         creditsButton.clicked += CreditsButtonPress;
     }
 
+    void SetUpCredits() {
+        menu = GetComponent<UIDocument>(); 
+        var root = menu.rootVisualElement;
+
+        creditsBackButton = root.Q<Button>("Back-Button");
+
+        // register button logic
+        creditsBackButton.clicked += CreditsBackButtonPress;
+    }
+    
     void StartButtonPress() => SceneManager.LoadScene("Gameplay");
-    void CreditsButtonPress()
-    {
-        Debug.Log("TODO");
+    void CreditsButtonPress() {
+        menu.visualTreeAsset = Menus[1];
+        menu.visualTreeAsset.Instantiate();
+        SetUpCredits();
+    }
+
+    void CreditsBackButtonPress() {
+        menu.visualTreeAsset = Menus[0];
+        menu.visualTreeAsset.Instantiate();
+        SetUpMainMenu();
     }
 }
