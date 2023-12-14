@@ -242,6 +242,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 23a586f7-acd1-4b1b-b62d-89df28dc117e
     m_ActionName: Player/Menu
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3337782650612112737}
+        m_TargetAssemblyTypeName: InputHandler, Assembly-CSharp
+        m_MethodName: CTX_NextMode
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6563f482-c7b7-47b1-a91f-78d95d4fd932
+    m_ActionName: Player/NextMode[/Keyboard/e,/Keyboard/l]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3337782650612112737}
+        m_TargetAssemblyTypeName: InputHandler, Assembly-CSharp
+        m_MethodName: CTX_PrevMode
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4aac5e83-806d-4438-a82c-0fb3435c6bf9
+    m_ActionName: Player/PrevMode[/Keyboard/q,/Keyboard/k]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

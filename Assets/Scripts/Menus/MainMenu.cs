@@ -1,9 +1,10 @@
 using UnityEngine;
-using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 [RequireComponent(typeof(UIDocument))]
-public class MainMenu : MonoBehaviour {
+public class MainMenu : MonoBehaviour
+{
     private UIDocument menu;
 
     private Button startButton;
@@ -11,27 +12,31 @@ public class MainMenu : MonoBehaviour {
 
     private Button[] menuNav = new Button[2];
     private int navIndex = 0;
-    
-    void Start() {
-        menu = GetComponent<UIDocument>(); 
+
+    void Start()
+    {
+        menu = GetComponent<UIDocument>();
         var root = menu.rootVisualElement;
         startButton = root.Q<Button>("Start-Button");
         creditsButton = root.Q<Button>("Credits-Button");
+
         menuNav = new Button[] { startButton, creditsButton };
 
         // register navigation logic
-        root.RegisterCallback<NavigationMoveEvent> (e => {
+        root.RegisterCallback<NavigationMoveEvent>(e =>
+        {
             e.PreventDefault();
-            switch(e.direction) {
-                case NavigationMoveEvent.Direction.Up: 
+            switch (e.direction)
+            {
+                case NavigationMoveEvent.Direction.Up:
                     navIndex = (navIndex + 1) % menuNav.Length;
-                    menuNav[navIndex].Focus(); 
+                    menuNav[navIndex].Focus();
                     // Debug.Log("Debug [MainMenu] navIndex " + navIndex);
                     break;
-                case NavigationMoveEvent.Direction.Down: 
+                case NavigationMoveEvent.Direction.Down:
                     navIndex--;
                     if (navIndex < 0) navIndex += menuNav.Length;
-                    menuNav[navIndex].Focus(); 
+                    menuNav[navIndex].Focus();
                     // Debug.Log("Debug [MainMenu] navIndex " + navIndex);
                     break;
             }
@@ -41,11 +46,10 @@ public class MainMenu : MonoBehaviour {
         startButton.clicked += StartButtonPress;
         creditsButton.clicked += CreditsButtonPress;
     }
-    
+
     void StartButtonPress() => SceneManager.LoadScene("Gameplay");
-    void CreditsButtonPress() { 
+    void CreditsButtonPress()
+    {
         Debug.Log("TODO");
     }
-
-
 }

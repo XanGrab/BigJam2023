@@ -1,10 +1,18 @@
+using BeauRoutine;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerController : Singleton<PlayerController>
 {
     [Header("External References")]
     [SerializeField] private GameObject afterimagePrefab;
+    [SerializeField] private Transform modeWheelTransform;
+    [SerializeField] private SpriteRenderer modeWheelSprite;
+    [SerializeField] private List<Sprite> modeSprites;
+
+    private Routine spinWheelRoutine = Routine.Null;
 
     [Header("Self-References")]
     [SerializeField] private Rigidbody rb;
@@ -15,16 +23,38 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private List<Transform> raycastPoints;
     [SerializeField] private float raycastHeight;
 
-    private PlayerAnimStateEnum currentAnimation;
+    private bool isAttacking;
 
-    //Animation states
-    enum PlayerAnimStateEnum {
+    private PlayerAnimStateEnum currentAnimation;
+    enum PlayerAnimStateEnum
+    {
         Player_Idle,
         Player_Jump_Up,
         Player_Jump_Down,
         Player_Drill_Right,
-        Player_Drill_Down
+        Player_Drill_Down,
+
+        Bow_light = 5,
+        Gauntlet_light = 6,
+        Hammer_light = 7,
+        Katana_light = 8,
+        Scythe_light = 9,
+        Shield_light = 10,
+        Tome_light = 11
     }
+
+    private ModeEnum currentMode = ModeEnum.Katana;
+    enum ModeEnum
+    {
+        Bow = 5,
+        Gauntlet = 6,
+        Hammer = 7,
+        Katana = 8,
+        Scythe = 9,
+        Shield = 10,
+        Tome = 11
+    }
+    float numModes = 7;
 
     [Header("Parameters")]
     [SerializeField] private float accelSpeed_ground;
@@ -192,6 +222,9 @@ public class PlayerController : Singleton<PlayerController>
                 rb.velocity -= new Vector3(0, gravDown * Time.deltaTime, 0);
         }
 
+        if (isAttacking)
+            return;
+
         //Set animation states
         if (grounded)
         {
@@ -230,42 +263,60 @@ public class PlayerController : Singleton<PlayerController>
         if ((lastGrounded == true) && (grounded == false))
             lastTimeGrounded = Time.time;
 
-        //Jump - grounded
-        if (InputHandler.Instance.Jump.Pressed)
+        if (!isAttacking)
         {
-            if ((grounded || (Time.time - lastTimeGrounded <= coyoteTime)))
-                Jump();
-            else
-                lastTimePressedJump = Time.time;
-        }
-        //Jump - buffered
-        if ((grounded == true))
-        {
-            if (Time.time - lastTimePressedJump <= jumpBuffer)
-                Jump();
-        }
-
-        //Boom attack
-        if (InputHandler.Instance.LightAttack.Pressed)
-        {
-            float xScale = 1;
-
-            if (InputHandler.Instance.Direction.magnitude > epsilon)
+            if (spinWheelRoutine == Routine.Null)
             {
-                //Attack in the held direction
-                if (InputHandler.Instance.Direction.x < 0)
-                    xScale = -1;
+                if (InputHandler.Instance.PrevMode.Pressed)
+                {
+                    int currIndex = (int)currentMode;
+                    currIndex--;
+
+                    if (currIndex == 4)
+                        currIndex = 11;
+
+                    ModeEnum newMode = (ModeEnum)currIndex;
+
+                    spinWheelRoutine = Routine.Start(this, SpinWheel(-360f / numModes, newMode));
+                }
+                else
+                {
+                    if (InputHandler.Instance.NextMode.Pressed)
+                    {
+                        int currIndex = (int)currentMode;
+                        currIndex++;
+
+                        if (currIndex == 12)
+                            currIndex = 5;
+
+                        ModeEnum newMode = (ModeEnum)currIndex;
+
+                        spinWheelRoutine = Routine.Start(this, SpinWheel(360f / numModes, newMode));
+                    }
+                }
             }
-            else
+
+            //Jump - grounded
+            if (InputHandler.Instance.Jump.Pressed)
             {
-                //Attack in the faced direction (horizontally)
-                if (spriteRenderer.flipX)
-                    xScale = -1;
+                if ((grounded || (Time.time - lastTimeGrounded <= coyoteTime)))
+                    Jump();
+                else
+                    lastTimePressedJump = Time.time;
+            }
+            //Jump - buffered
+            if ((grounded == true))
+            {
+                if (Time.time - lastTimePressedJump <= jumpBuffer)
+                    Jump();
             }
 
-            attackParent.localScale = new Vector3(xScale, 1, 1);
-
-            boom_anim.SetTrigger("Boom");
+            //Boom attack
+            if (InputHandler.Instance.LightAttack.Pressed)
+            {
+                ChangeAnimationState((PlayerAnimStateEnum)currentMode);
+                isAttacking = true;
+            }
         }
 
         //Space release gravity
@@ -273,6 +324,21 @@ public class PlayerController : Singleton<PlayerController>
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * spaceReleaseGravMult);
         }
+    }
+
+    private IEnumerator SpinWheel(float _degToTurn, ModeEnum _newMode)
+    {
+        Vector3 startAngle = modeWheelTransform.localEulerAngles;
+
+        yield return Tween.Float(0, 1, (f) => { modeWheelSprite.SetAlpha(f); }, 0.1f);
+
+        yield return Tween.Float(0, _degToTurn, (f) => { modeWheelTransform.localEulerAngles = startAngle + new Vector3(0, 0, f); }, 0.1f);
+
+        SetMode(_newMode);
+
+        yield return Tween.Float(1, 0, (f) => { modeWheelSprite.SetAlpha(f); }, 0.1f);
+
+        spinWheelRoutine = Routine.Null;
     }
 
     private void Jump()
@@ -300,5 +366,39 @@ public class PlayerController : Singleton<PlayerController>
 
         //Update current anim state var
         currentAnimation = _newState;
+    }
+
+    private void SetMode(ModeEnum _newMode)
+    {
+        currentMode = _newMode;
+        Sprite modeSprite = modeSprites[(int)currentMode - 5];
+
+        PlayerHUD.Instance.ModeImage.style.backgroundImage = new StyleBackground(modeSprite);
+    }
+
+    public void SpawnHitbox()
+    {
+        switch (currentMode)
+        {
+            case ModeEnum.Bow:
+                break;
+            case ModeEnum.Gauntlet:
+                break;
+            case ModeEnum.Hammer:
+                break;
+            case ModeEnum.Katana:
+                break;
+            case ModeEnum.Scythe:
+                break;
+            case ModeEnum.Shield:
+                break;
+            case ModeEnum.Tome:
+                break;
+        }
+    }
+
+    public void OnAttackEnd()
+    {
+        isAttacking = false;
     }
 }

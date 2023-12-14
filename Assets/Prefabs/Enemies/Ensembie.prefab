@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 6806880638627136402}
   - component: {fileID: 6799303452642926646}
   - component: {fileID: 3806690520179971843}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Ensembie
   m_TagString: Untagged
   m_Icon: {fileID: 0}

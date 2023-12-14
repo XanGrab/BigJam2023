@@ -11,8 +11,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - Entity
+  - Entity_Enemy
+  - Entity_Player
   - Terrain
   - 
   - PlayerHurtbox

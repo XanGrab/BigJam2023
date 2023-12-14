@@ -12,7 +12,9 @@ public class InputHandler : Singleton<InputHandler>
         LightAttack,
         HeavyAttack,
         Jump,
-        Roll
+        Roll,
+        NextMode,
+        PrevMode
     }
 
     public Vector2 Direction
@@ -28,6 +30,8 @@ public class InputHandler : Singleton<InputHandler>
     public ButtonState HeavyAttack => buttons[(int)ButtonIndices.HeavyAttack];
     public ButtonState Jump => buttons[(int)ButtonIndices.Jump];
     public ButtonState Roll => buttons[(int)ButtonIndices.Roll];
+    public ButtonState NextMode => buttons[(int)ButtonIndices.NextMode];
+    public ButtonState PrevMode => buttons[(int)ButtonIndices.PrevMode];
 
     private int buttonCount = -1; //Size of ButtonIndices enum
     [SerializeField] private short bufferFrames = 5;
@@ -88,9 +92,20 @@ public class InputHandler : Singleton<InputHandler>
     {
         buttons[(int)ButtonIndices.Jump].Set(_ctx);
     }
+
     public void CTX_Roll(InputAction.CallbackContext _ctx)
     {
         buttons[(int)ButtonIndices.Roll].Set(_ctx);
+    }
+
+    public void CTX_NextMode(InputAction.CallbackContext _ctx)
+    {
+        buttons[(int)ButtonIndices.NextMode].Set(_ctx);
+    }
+
+    public void CTX_PrevMode(InputAction.CallbackContext _ctx)
+    {
+        buttons[(int)ButtonIndices.PrevMode].Set(_ctx);
     }
 
     //public struct AnalogToDigitalButtonState
