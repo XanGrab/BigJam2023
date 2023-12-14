@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2d61a3a6f37ee93eeacef6445513c6dd
+guid: e4bb4e936b2d22924a1a4689be3eb9b1
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -140,17 +140,17 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
   spriteSheetImportData:
-  - name: WeaponIcons_0
+  - name: Game Over
     originalName: 
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 14
-      height: 14
+      width: 320
+      height: 180
     spriteID: dd186696921634843af06f48e3a02a67
     spriteBone: []
     spriteOutline: []
@@ -160,118 +160,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  - name: WeaponIcons_1
+  - name: Main Menu
     originalName: 
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 20
-      y: 4
-      width: 14
-      height: 14
+      x: 4
+      y: 192
+      width: 320
+      height: 180
     spriteID: 4b874488aa6a0a4488c5069a61e610fd
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 0, y: 0}
-  - name: WeaponIcons_2
-    originalName: 
-    pivot: {x: 0, y: 0}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 36
-      y: 4
-      width: 14
-      height: 14
-    spriteID: 2caa2c4d683883b40978339384cd6712
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 0, y: 0}
-  - name: WeaponIcons_3
-    originalName: 
-    pivot: {x: 0, y: 0}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 52
-      y: 4
-      width: 14
-      height: 14
-    spriteID: 43dd9d145a4fd8a40a4904cb082217e4
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 0, y: 0}
-  - name: WeaponIcons_4
-    originalName: 
-    pivot: {x: 0, y: 0}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 68
-      y: 4
-      width: 14
-      height: 14
-    spriteID: a18f328fb2f1c2b4087eaba8df23780a
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 0, y: 0}
-  - name: WeaponIcons_5
-    originalName: 
-    pivot: {x: 0, y: 0}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 84
-      y: 4
-      width: 14
-      height: 14
-    spriteID: 9892f4ee24ba8d44097b12d1fdcac5dc
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 0, y: 0}
-  - name: WeaponIcons_6
-    originalName: 
-    pivot: {x: 0, y: 0}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 100
-      y: 4
-      width: 14
-      height: 14
-    spriteID: 2d7dd56be0637c542b586ca0162d81f6
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -282,20 +182,36 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   asepriteLayers:
   - layerIndex: 0
-    guid: -992031325
-    name: TitleSeq
+    guid: 367179110
+    name: MenuBackgrounds
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: TitleSeq
+    - name: MenuBackgrounds_Frame_0
       frameIndex: 0
       cellRect:
-        x: 24
-        y: 7
-        width: 275
-        height: 40
-      spriteId: 4fec9a36c3c719b04b0d81ecba3bae91
+        x: 0
+        y: 0
+        width: 320
+        height: 180
+      spriteId: 9c09f74bcb53e2a3ba62cc5ea0b755f9
+    - name: MenuBackgrounds_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 0
+        y: 0
+        width: 320
+        height: 180
+      spriteId: 1f944e7d4650c2c94b191581f1438ec2
+    - name: MenuBackgrounds_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 0
+        y: 0
+        width: 320
+        height: 180
+      spriteId: 2b41cc98b2c266521a6d98fb4d2279fb
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -361,4 +277,4 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 320, y: 60}
+  canvasSize: {x: 320, y: 180}

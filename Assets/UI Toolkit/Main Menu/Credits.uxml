@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Styles/MenuStyles.uss?fileID=7433441132597879392&amp;guid=53b2d817b8bbd81cf95af4f28baf56f9&amp;type=3#MenuStyles" />
+    <ui:VisualElement name="Root" style="flex-grow: 1; margin-top: 32px; margin-right: 16px; margin-bottom: 16px; margin-left: 16px;">
+        <ui:Label tabindex="-1" text="&lt;b&gt;Code Monkeys&lt;/b&gt;&#10;- Xander Grabowski&#10;- Travis Bird&#10;&#10;&lt;b&gt;Pixel Perfectionists&lt;/b&gt;&#10;- Pascal King&#10;- Lucas Smith&#10;- Xander Grabowski&#10;&#10;&lt;b&gt;Magical Maestro&lt;/b&gt;&#10;- Soranohato" parse-escape-sequences="false" display-tooltip-when-elided="true" name="Credits" class="main-menu-text-light" style="margin-top: 0; margin-right: 0; margin-bottom: 8px; margin-left: 0; font-size: 40px; align-self: center; align-items: center;" />
+        <ui:Button text="&lt;- Back" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Back-Button" class="main-menu-button-light" style="width: 20%; align-items: center; align-self: flex-start; margin-top: 8px; margin-right: 4px; margin-bottom: 2px;" />
+    </ui:VisualElement>
+</ui:UXML>
