@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5db0a0aa1294085b58a068c80705b796
+guid: 8323a5777768b1e14995ea7b26d8c5ae
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -71,11 +71,11 @@ ScriptedImporter:
     textureFormatSet: 0
     applyGammaDecoding: 0
   previousAsepriteImporterSettings:
-    fileImportMode: 0
+    fileImportMode: 1
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
-    defaultPivotAlignment: 0
+    defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
     spritePadding: 0
     generateModelPrefab: 1
@@ -83,11 +83,11 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   asepriteImporterSettings:
-    fileImportMode: 0
+    fileImportMode: 1
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
-    defaultPivotAlignment: 0
+    defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
     spritePadding: 0
     generateModelPrefab: 1
@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638368895796861313
+  platformSettingsDirtyTick: 638380132749768379
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -119,18 +119,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: WeaponIcons
+  - name: Spirouette
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.47058824, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 110
-      height: 14
-    spriteID: aacb7aa3bdee42f428b44d1331c9c719
+      width: 17
+      height: 23
+    spriteID: 3e3df30e1474272ec8fa02c1dc454046
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -140,18 +140,98 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
   spriteSheetImportData:
-  - name: Stage-Knight
+  - name: WeaponIcons_0
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 33
-      height: 53
+      width: 14
+      height: 14
     spriteID: dd186696921634843af06f48e3a02a67
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: WeaponIcons_1
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 20
+      y: 4
+      width: 14
+      height: 14
+    spriteID: 4b874488aa6a0a4488c5069a61e610fd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: WeaponIcons_2
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 36
+      y: 4
+      width: 14
+      height: 14
+    spriteID: 2caa2c4d683883b40978339384cd6712
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: WeaponIcons_3
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 52
+      y: 4
+      width: 14
+      height: 14
+    spriteID: 43dd9d145a4fd8a40a4904cb082217e4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: WeaponIcons_4
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 68
+      y: 4
+      width: 14
+      height: 14
+    spriteID: a18f328fb2f1c2b4087eaba8df23780a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -162,7 +242,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: WeaponIcons_5
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -182,7 +262,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: WeaponIcons_6
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -202,20 +282,20 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   asepriteLayers:
   - layerIndex: 0
-    guid: -402666882
-    name: Stage-knight
+    guid: 1067776528
+    name: Spirouette
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Stage-knight
+    - name: Spirouette
       frameIndex: 0
       cellRect:
-        x: 1
-        y: 4
-        width: 30
-        height: 53
-      spriteId: 9dfcab5f1dabb3801955246d4616f7d4
+        x: 8
+        y: 0
+        width: 17
+        height: 23
+      spriteId: 3e3df30e1474272ec8fa02c1dc454046
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -281,4 +361,4 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 32, y: 64}
+  canvasSize: {x: 32, y: 32}

@@ -26,13 +26,13 @@ public class MainMenu : MonoBehaviour {
                 case NavigationMoveEvent.Direction.Up: 
                     navIndex = (navIndex + 1) % menuNav.Length;
                     menuNav[navIndex].Focus(); 
-                    Debug.Log("Debug [MainMenu] navIndex " + navIndex);
+                    // Debug.Log("Debug [MainMenu] navIndex " + navIndex);
                     break;
                 case NavigationMoveEvent.Direction.Down: 
                     navIndex--;
                     if (navIndex < 0) navIndex += menuNav.Length;
                     menuNav[navIndex].Focus(); 
-                    Debug.Log("Debug [MainMenu] navIndex " + navIndex);
+                    // Debug.Log("Debug [MainMenu] navIndex " + navIndex);
                     break;
             }
         });
