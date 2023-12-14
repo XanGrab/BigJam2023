@@ -270,10 +270,9 @@ public class EnemyController : MonoBehaviour
         grounded = false;
     }
 
-    private void ChangeAnimationState(PlayerAnimStateEnum _newState)
-    {
+    private void ChangeAnimationState(PlayerAnimStateEnum _newState) {
         //Stop same animation from interrupting itself
-        if (currentAnimation == _newState)
+        if (currentAnimation == _newState || !anim)
             return;
 
         //Play new animation
