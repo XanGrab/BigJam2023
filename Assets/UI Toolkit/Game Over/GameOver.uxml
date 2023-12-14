@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI%20Toolkit/MenuStyles.uss?fileID=7433441132597879392&amp;guid=53b2d817b8bbd81cf95af4f28baf56f9&amp;type=3#MenuStyles" />
+    <Style src="project://database/Assets/UI%20Toolkit/Styles/MenuStyles.uss?fileID=7433441132597879392&amp;guid=53b2d817b8bbd81cf95af4f28baf56f9&amp;type=3#MenuStyles" />
     <ui:VisualElement style="flex-grow: 1; flex-direction: row; -unity-text-align: middle-center; justify-content: center; align-items: center;">
-        <ui:Button text="Continue" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Continue-Button" class="main-menu-button" style="margin-right: 120px;" />
-        <ui:Button text="Main Menu" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Main-Menu-Button" class="main-menu-button" style="margin-left: 120px;" />
+        <ui:Button text="Continue" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Continue-Button" class="main-menu-button main-menu-button-light" style="margin-right: 120px;" />
+        <ui:Button text="Main Menu" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Main-Menu-Button" class="main-menu-button main-menu-button-light" style="margin-left: 120px;" />
     </ui:VisualElement>
 </ui:UXML>

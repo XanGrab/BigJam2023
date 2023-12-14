@@ -24,13 +24,13 @@ public class GameOverMenu : MonoBehaviour {
                 case NavigationMoveEvent.Direction.Left:
                     navIndex = (navIndex + 1) % menuNav.Length;
                     menuNav[navIndex].Focus(); 
-                    Debug.Log("Debug [GameOver] navIndex " + navIndex);
+                    // Debug.Log("Debug [GameOver] navIndex " + navIndex);
                     break;
                 case NavigationMoveEvent.Direction.Right:
                     navIndex--;
                     if (navIndex < 0) navIndex += menuNav.Length;
                     menuNav[navIndex].Focus(); 
-                    Debug.Log("Debug [GameOver] navIndex " + navIndex);
+                    // Debug.Log("Debug [GameOver] navIndex " + navIndex);
                     break;
             }
             e.PreventDefault();

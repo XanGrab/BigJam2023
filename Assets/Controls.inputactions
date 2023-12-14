@@ -322,37 +322,59 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "dfa9ecd2-33c3-42b5-8b11-5613c84df430",
-                    "path": "",
+                    "name": "Joystick",
+                    "id": "4d41e9ec-e0d1-4523-8f18-cde45aa7252e",
+                    "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Interact_Confirm",
-                    "isComposite": false,
+                    "action": "Move",
+                    "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "92034903-6b2b-4369-aa14-95346cc3ef7f",
-                    "path": "",
+                    "name": "up",
+                    "id": "3c094855-3b8e-45d9-b469-f2de44e5b0ba",
+                    "path": "<Joystick>/stick/up",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Cancel",
+                    "groups": "Joystick",
+                    "action": "Move",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "a2bd46fc-ba98-4c57-a419-386d8407e1be",
-                    "path": "",
+                    "name": "down",
+                    "id": "8f6aac1d-4161-48d3-bf4c-599fca58491f",
+                    "path": "<Joystick>/stick/down",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Menu",
+                    "groups": "Joystick",
+                    "action": "Move",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "15427d06-d718-4357-80f1-73ff5f30e8ed",
+                    "path": "<Joystick>/stick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joystick",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "dbafcc42-21fa-457c-8227-eac48f3dce80",
+                    "path": "<Joystick>/stick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Joystick",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         },
@@ -718,17 +740,6 @@
                 },
                 {
                     "name": "",
-                    "id": "9e92bb26-7e3b-4ec4-b06b-3c8f8e498ddc",
-                    "path": "*/{Submit}",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse;Gamepad;Touch;Joystick;XR",
-                    "action": "Submit",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "82627dcc-3b13-4ba9-841d-e4b746d6553e",
                     "path": "*/{Cancel}",
                     "interactions": "",
@@ -867,6 +878,28 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "TrackedDeviceOrientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dfc1dc1c-f849-4553-b5ce-b9264c6593c5",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a1838069-839f-4696-acc2-1771715526d6",
+                    "path": "*/{Submit}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR;Joystick;Touch;Gamepad;Keyboard&Mouse",
+                    "action": "Submit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

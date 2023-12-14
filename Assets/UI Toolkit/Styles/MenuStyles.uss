@@ -1,61 +1,117 @@
-.main-menu-button {
+.main-menu-button-dark {
     height: 16px;
     width: auto;
     -unity-font: url('project://database/Assets/Fonts/PixelClean.ttf?fileID=12800000&guid=0cb3d4e65972386beaab0fcd495d9592&type=3#PixelClean');
     -unity-font-style: normal;
-    font-size: 32px;
+    font-size: 48px;
     border-left-color: rgba(149, 149, 149, 0);
     border-right-color: rgba(149, 149, 149, 0);
     border-top-color: rgba(149, 149, 149, 0);
     border-bottom-color: rgba(149, 149, 149, 0);
     background-color: rgba(188, 188, 188, 0);
     -unity-font-definition: url('project://database/Assets/Fonts/PixelClean%20SDF.asset?fileID=11400000&guid=96a90f8c9249f9cd3b2c03f915f095e3&type=2#PixelClean SDF');
-    color: rgb(0, 0, 0);
+    color: rgb(16, 16, 17);
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
-.main-menu-button:focus {
+.main-menu-button-dark:focus {
     height: 16px;
     width: auto;
     -unity-font: url('project://database/Assets/Fonts/PixelClean.ttf?fileID=12800000&guid=0cb3d4e65972386beaab0fcd495d9592&type=3#PixelClean');
     -unity-font-style: normal;
-    font-size: 32px;
     border-left-color: rgba(149, 149, 149, 0);
     border-right-color: rgba(149, 149, 149, 0);
     border-top-color: rgba(149, 149, 149, 0);
     border-bottom-color: rgba(149, 149, 149, 0);
     background-color: rgba(0, 0, 0, 0.17);
     -unity-font-definition: url('project://database/Assets/Fonts/PixelClean%20SDF.asset?fileID=11400000&guid=96a90f8c9249f9cd3b2c03f915f095e3&type=2#PixelClean SDF');
-    color: rgb(0, 0, 0);
+    color: rgb(16, 16, 17);
 }
 
-.main-menu-button:hover {
+.main-menu-button-dark:hover {
     height: 16px;
     width: auto;
     -unity-font: url('project://database/Assets/Fonts/PixelClean.ttf?fileID=12800000&guid=0cb3d4e65972386beaab0fcd495d9592&type=3#PixelClean');
     -unity-font-style: normal;
-    font-size: 32px;
     border-left-color: rgba(149, 149, 149, 0);
     border-right-color: rgba(149, 149, 149, 0);
     border-top-color: rgba(149, 149, 149, 0);
     border-bottom-color: rgba(149, 149, 149, 0);
     background-color: rgba(0, 0, 0, 0.17);
     -unity-font-definition: url('project://database/Assets/Fonts/PixelClean%20SDF.asset?fileID=11400000&guid=96a90f8c9249f9cd3b2c03f915f095e3&type=2#PixelClean SDF');
-    color: rgb(0, 0, 0);
+    color: rgb(16, 16, 17);
 }
 
-.main-menu-button:active {
+.main-menu-button-dark:active {
     height: 16px;
     width: auto;
     -unity-font: url('project://database/Assets/Fonts/PixelClean.ttf?fileID=12800000&guid=0cb3d4e65972386beaab0fcd495d9592&type=3#PixelClean');
     -unity-font-style: normal;
-    font-size: 32px;
     border-left-color: rgba(149, 149, 149, 0);
     border-right-color: rgba(149, 149, 149, 0);
     border-top-color: rgba(149, 149, 149, 0);
     border-bottom-color: rgba(149, 149, 149, 0);
     background-color: rgba(0, 0, 0, 0.52);
     -unity-font-definition: url('project://database/Assets/Fonts/PixelClean%20SDF.asset?fileID=11400000&guid=96a90f8c9249f9cd3b2c03f915f095e3&type=2#PixelClean SDF');
-    color: rgb(255, 255, 255);
+    color: rgb(239, 241, 242);
+}
+
+.main-menu-button-light {
+    height: 16px;
+    width: auto;
+    -unity-font: url('project://database/Assets/Fonts/PixelClean.ttf?fileID=12800000&guid=0cb3d4e65972386beaab0fcd495d9592&type=3#PixelClean');
+    -unity-font-style: normal;
+    font-size: 48px;
+    border-left-color: rgba(149, 149, 149, 0);
+    border-right-color: rgba(149, 149, 149, 0);
+    border-top-color: rgba(149, 149, 149, 0);
+    border-bottom-color: rgba(149, 149, 149, 0);
+    background-color: rgba(188, 188, 188, 0);
+    -unity-font-definition: url('project://database/Assets/Fonts/PixelClean%20SDF.asset?fileID=11400000&guid=96a90f8c9249f9cd3b2c03f915f095e3&type=2#PixelClean SDF');
+    color: rgb(239, 241, 242);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.main-menu-button-light:focus {
+    height: 16px;
+    width: auto;
+    -unity-font: url('project://database/Assets/Fonts/PixelClean.ttf?fileID=12800000&guid=0cb3d4e65972386beaab0fcd495d9592&type=3#PixelClean');
+    -unity-font-style: normal;
+    border-left-color: rgba(149, 149, 149, 0);
+    border-right-color: rgba(149, 149, 149, 0);
+    border-top-color: rgba(149, 149, 149, 0);
+    border-bottom-color: rgba(149, 149, 149, 0);
+    background-color: rgba(0, 0, 0, 0.17);
+    -unity-font-definition: url('project://database/Assets/Fonts/PixelClean%20SDF.asset?fileID=11400000&guid=96a90f8c9249f9cd3b2c03f915f095e3&type=2#PixelClean SDF');
+    color: rgb(239, 241, 242);
+}
+
+.main-menu-button-light:hover {
+    height: 16px;
+    width: auto;
+    -unity-font: url('project://database/Assets/Fonts/PixelClean.ttf?fileID=12800000&guid=0cb3d4e65972386beaab0fcd495d9592&type=3#PixelClean');
+    -unity-font-style: normal;
+    border-left-color: rgba(149, 149, 149, 0);
+    border-right-color: rgba(149, 149, 149, 0);
+    border-top-color: rgba(149, 149, 149, 0);
+    border-bottom-color: rgba(149, 149, 149, 0);
+    background-color: rgba(0, 0, 0, 0.17);
+    -unity-font-definition: url('project://database/Assets/Fonts/PixelClean%20SDF.asset?fileID=11400000&guid=96a90f8c9249f9cd3b2c03f915f095e3&type=2#PixelClean SDF');
+    color: rgb(239, 241, 242);
+}
+
+.main-menu-button-light:active {
+    height: 16px;
+    width: auto;
+    -unity-font: url('project://database/Assets/Fonts/PixelClean.ttf?fileID=12800000&guid=0cb3d4e65972386beaab0fcd495d9592&type=3#PixelClean');
+    -unity-font-style: normal;
+    border-left-color: rgba(149, 149, 149, 0);
+    border-right-color: rgba(149, 149, 149, 0);
+    border-top-color: rgba(149, 149, 149, 0);
+    border-bottom-color: rgba(149, 149, 149, 0);
+    background-color: rgba(0, 0, 0, 0.52);
+    -unity-font-definition: url('project://database/Assets/Fonts/PixelClean%20SDF.asset?fileID=11400000&guid=96a90f8c9249f9cd3b2c03f915f095e3&type=2#PixelClean SDF');
+    color: rgb(16, 16, 17);
 }

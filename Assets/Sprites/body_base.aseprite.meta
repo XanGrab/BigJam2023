@@ -118,10 +118,47 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  animatedSpriteImportData: []
+  animatedSpriteImportData:
+  - name: body_base
+    originalName: 
+    pivot: {x: 0.5263158, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 19
+      height: 21
+    spriteID: 935e19aca9ff36e94bc5a4ced73071a2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
   spriteSheetImportData: []
-  asepriteLayers: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -1176069798
+    name: body_base
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: body_base
+      frameIndex: 0
+      cellRect:
+        x: 6
+        y: 0
+        width: 19
+        height: 21
+      spriteId: 935e19aca9ff36e94bc5a4ced73071a2
+    linkedCells: []
+    parentIndex: -1
   platformSettings: []
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 0, y: 0}
+  canvasSize: {x: 32, y: 32}
