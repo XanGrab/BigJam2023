@@ -27,17 +27,15 @@ public class MusicController : MonoBehaviour {
     }
 
     private void OnEnable() {
-        playerCtrl.onModeChange += SwitchTrack;
+        playerCtrl.OnModeChange += SwitchTrack;
     }
     private void OnDisable() {
-        playerCtrl.onModeChange -= SwitchTrack;
+        playerCtrl.OnModeChange -= SwitchTrack;
     }
 
     private void SwitchTrack(int modeIndex){
         trackIndex = modeIndex - 5;
         float timestamp = AudioManager.GetTimestamp();
-        AudioManager.Stop();
-        Debug.Log("[MusicController] onSwitch " + modeIndex + ", Track Index " + trackIndex);
         AudioManager.Play(tracks[trackIndex], timestamp);
     }
 }

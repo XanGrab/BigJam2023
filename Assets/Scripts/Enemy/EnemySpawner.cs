@@ -108,7 +108,7 @@ public class EnemySpawner : MonoBehaviour {
     }
 
     private void Spawn(GameObject enemy, Bounds bounds){
-        Debug.Log("[EnemySpawner] Spawn!");
+        // Debug.Log("[EnemySpawner] Spawn!");
         Vector3 randPoint = new Vector3(
             Random.Range(bounds.min.x, bounds.max.x),
             Random.Range(bounds.min.y, bounds.max.y),

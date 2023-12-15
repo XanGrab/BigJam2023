@@ -28,7 +28,7 @@ public class PlayerStats : Singleton<PlayerStats>{
     }
 
     private void Die() {
-        AudioManager.Stop();
+        AudioManager.Play("GameOver");
         SceneManager.LoadScene("GameOver");
     }
 
