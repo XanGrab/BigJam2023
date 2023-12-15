@@ -9,6 +9,8 @@ public class PlayerHUD : Singleton<PlayerHUD> {
     [SerializeField] private PlayerController playerCtrl;
 
     private ProgressBar Healthbar;
+    [SerializeField] private StaffMeter staffMeter;
+    private VisualElement MeterUI;
     public VisualElement ModeImage { get; private set; }
     [SerializeField] private List<Sprite> modeSprites;
     public Label ModeLabel;
@@ -28,6 +30,7 @@ public class PlayerHUD : Singleton<PlayerHUD> {
 
         var root = playerHUD.rootVisualElement;
         Healthbar = root.Q<ProgressBar>("HealthBar");
+        MeterUI = root.Q<VisualElement>("MusicStaff");
         ModeImage = root.Q<VisualElement>("ModeImage");
         ModeLabel = root.Q<Label>("ModeLabel");
 
@@ -57,5 +60,8 @@ public class PlayerHUD : Singleton<PlayerHUD> {
         Sprite modeSprite = modeSprites[modeIndex - 5];
         ModeImage.style.backgroundImage = new StyleBackground(modeSprite);
         ModeLabel.text = modeNames[modeIndex - 5];
+
+        Sprite meterSprite = staffMeter.GetModeSprite(modeIndex);
+        MeterUI.style.backgroundImage = new StyleBackground(meterSprite);
     }
 }

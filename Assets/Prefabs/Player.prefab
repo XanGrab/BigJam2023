@@ -243,10 +243,12 @@ MonoBehaviour:
   - 9
   - 15
   - -4
+  attackPrefabs: []
   rb: {fileID: 5073242901404600230}
   spriteRenderer: {fileID: 862976114796207447}
   anim: {fileID: 3742375398058250017}
   boom_anim: {fileID: 0}
+  attackRotate: {fileID: 0}
   attackParent: {fileID: 0}
   raycastPoints:
   - {fileID: 2517603942573813435}
@@ -427,6 +429,7 @@ MonoBehaviour:
   playerHUD: {fileID: 2073634884948809324}
   playerStats: {fileID: 1778934040}
   playerCtrl: {fileID: 1778934035}
+  staffMeter: {fileID: 11400000, guid: 844fd2ebab74e2726b35be9a12704927, type: 2}
   modeSprites:
   - {fileID: -6794938024564825155, guid: 1822cff1c3c98b940b65884309d917fc, type: 3}
   - {fileID: -8412038956687951044, guid: 1822cff1c3c98b940b65884309d917fc, type: 3}

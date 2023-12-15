@@ -1219,6 +1219,26 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 748, y: 604}
+  - name: treble_n_staff_Frame_55
+    originalName: 
+    pivot: {x: 0.48876405, y: -0.11538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 664
+      width: 178
+      height: 52
+    spriteID: d727784bfadd952e7902ceb318d51df4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 664}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -1668,6 +1688,14 @@ ScriptedImporter:
         width: 178
         height: 52
       spriteId: 46e87011d4eaa50cf8dec60faba9914c
+    - name: treble_n_staff_Frame_55
+      frameIndex: 55
+      cellRect:
+        x: 9
+        y: 6
+        width: 178
+        height: 52
+      spriteId: d727784bfadd952e7902ceb318d51df4
     linkedCells: []
     parentIndex: -1
   platformSettings: []
