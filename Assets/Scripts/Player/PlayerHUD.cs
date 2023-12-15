@@ -46,12 +46,12 @@ public class PlayerHUD : Singleton<PlayerHUD>
 
     private void OnEnable() {
         playerStats.onHPChange += UpdateHealthBarValue;
-        playerCtrl.onModeChange += SetMode;
+        playerCtrl.OnModeChange += SetMode;
     }
 
     private void OnDisable() {
         playerStats.onHPChange -= UpdateHealthBarValue;
-        playerCtrl.onModeChange -= SetMode;
+        playerCtrl.OnModeChange -= SetMode;
     }
 
     private void SetMode(int modeIndex) {

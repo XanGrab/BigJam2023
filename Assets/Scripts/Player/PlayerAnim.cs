@@ -7,6 +7,7 @@ public class PlayerAnim : MonoBehaviour
     public void SpawnHitbox()
     {
         player.SpawnHitbox();
+        player.Scoot();
     }
 
     public void OnAttackEnd()

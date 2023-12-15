@@ -3,7 +3,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class PlayerController : Singleton<PlayerController>
 {
@@ -11,6 +10,7 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private GameObject afterimagePrefab;
     [SerializeField] private Transform modeWheelTransform;
     [SerializeField] private SpriteRenderer modeWheelSprite;
+    [SerializeField] private float[] scootSpeeds;
 
     private Routine spinWheelRoutine = Routine.Null;
 
@@ -23,8 +23,11 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private List<Transform> raycastPoints;
     [SerializeField] private float raycastHeight;
 
+    private bool canBufferAttack = false;
+    private bool attackBuffered = false;
+
     private bool isAttacking;
-    public event Action<int> onModeChange;
+    public event Action<int> OnModeChange;
 
     private PlayerAnimStateEnum currentAnimation;
     enum PlayerAnimStateEnum
@@ -111,6 +114,17 @@ public class PlayerController : Singleton<PlayerController>
 
             if (currInput.magnitude > 0.05f)
                 currInput.Normalize();
+
+            if (isAttacking)
+                currInput = Vector3.zero;
+            else
+            {
+                if (currInput.x > epsilon)
+                    spriteRenderer.flipX = false;
+                else if (currInput.x < -epsilon)
+                    spriteRenderer.flipX = true;
+            }
+
             if (grounded)
             {
                 //Apply ground fricion
@@ -197,23 +211,8 @@ public class PlayerController : Singleton<PlayerController>
             #endregion
         }
 
-
-        //Sprite flipping + spark vfx
-        bool leftVFXActive = false;
-        bool rightVFXActive = false;
-        if (rb.velocity.x < -epsilon)
-        {
-            spriteRenderer.flipX = true;
-            leftVFXActive = true;
-        }
-        else
-        {
-            if (rb.velocity.x > epsilon)
-            {
-                spriteRenderer.flipX = false;
-                rightVFXActive = true;
-            }
-        }
+        if (isAttacking)
+            return;
 
         //Gravity
         if (useGravity)
@@ -223,9 +222,6 @@ public class PlayerController : Singleton<PlayerController>
             else
                 rb.velocity -= new Vector3(0, gravDown * Time.deltaTime, 0);
         }
-
-        if (isAttacking)
-            return;
 
         //Set animation states
         if (grounded)
@@ -264,6 +260,7 @@ public class PlayerController : Singleton<PlayerController>
         //Get last time grounded
         if ((lastGrounded == true) && (grounded == false))
             lastTimeGrounded = Time.time;
+
 
         if (!isAttacking)
         {
@@ -312,11 +309,18 @@ public class PlayerController : Singleton<PlayerController>
             }
 
             //Boom attack
-            if (InputHandler.Instance.LightAttack.Pressed)
+            if (attackBuffered || InputHandler.Instance.LightAttack.Pressed)
             {
                 ChangeAnimationState((PlayerAnimStateEnum)currentMode);
+
                 isAttacking = true;
+                attackBuffered = false;
             }
+        }
+        else
+        {
+            if (canBufferAttack && InputHandler.Instance.LightAttack.Pressed)
+                attackBuffered = true;
         }
 
         //Space release gravity
@@ -326,14 +330,15 @@ public class PlayerController : Singleton<PlayerController>
         }
     }
 
-    private IEnumerator SpinWheel(float _degToTurn, int _modeIndex) {
+    private IEnumerator SpinWheel(float _degToTurn, int _modeIndex)
+    {
         Vector3 startAngle = modeWheelTransform.localEulerAngles;
 
         yield return Tween.Float(0, 1, (f) => { modeWheelSprite.SetAlpha(f); }, 0.1f);
 
         yield return Tween.Float(0, _degToTurn, (f) => { modeWheelTransform.localEulerAngles = startAngle + new Vector3(0, 0, f); }, 0.1f);
 
-        onModeChange?.Invoke(_modeIndex);
+        OnModeChange?.Invoke(_modeIndex);
 
         yield return Tween.Float(1, 0, (f) => { modeWheelSprite.SetAlpha(f); }, 0.1f);
 
@@ -367,7 +372,10 @@ public class PlayerController : Singleton<PlayerController>
         currentAnimation = _newState;
     }
 
-    public void SpawnHitbox() {
+    public void SpawnHitbox()
+    {
+        canBufferAttack = true;
+
         switch (currentMode)
         {
             case ModeEnum.Bow:
@@ -387,7 +395,20 @@ public class PlayerController : Singleton<PlayerController>
         }
     }
 
-    public void OnAttackEnd() {
+    public void OnAttackEnd()
+    {
         isAttacking = false;
+
+        canBufferAttack = false;
+    }
+
+    public void Scoot()
+    {
+        float speedToUse = scootSpeeds[(int)currentMode - 5];
+
+        if (spriteRenderer.flipX)
+            speedToUse *= -1;
+
+        rb.velocity = new Vector3(speedToUse, rb.velocity.y, rb.velocity.z);
     }
 }
