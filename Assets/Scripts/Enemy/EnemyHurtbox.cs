@@ -6,6 +6,11 @@ public class EnemyHurtbox : MonoBehaviour
 
     private void OnTriggerEnter(Collider _col)
     {
-        stats.TakeDamage(_col.GetComponent<Hitbox>().Damage);
+        Hitbox hitbox = _col.GetComponent<Hitbox>();
+
+        stats.TakeDamage(hitbox.Damage);
+
+        if (hitbox.DestroyOnHit)
+            Destroy(hitbox.gameObject);
     }
 }

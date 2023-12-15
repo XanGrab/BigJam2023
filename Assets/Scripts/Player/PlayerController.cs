@@ -11,6 +11,7 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private Transform modeWheelTransform;
     [SerializeField] private SpriteRenderer modeWheelSprite;
     [SerializeField] private float[] scootSpeeds;
+    [SerializeField] private GameObject[] attackPrefabs;
 
     private Routine spinWheelRoutine = Routine.Null;
 
@@ -19,6 +20,7 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Animator anim;
     [SerializeField] private Animator boom_anim;
+    [SerializeField] private Transform attackRotate;
     [SerializeField] private Transform attackParent;
     [SerializeField] private List<Transform> raycastPoints;
     [SerializeField] private float raycastHeight;
@@ -341,6 +343,8 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Jump()
     {
+        return;
+
         useGravity = true;
 
         rb.velocity = new Vector2(rb.velocity.x, jumpPower);
@@ -370,23 +374,12 @@ public class PlayerController : Singleton<PlayerController>
     {
         canBufferAttack = true;
 
-        switch (currentMode)
-        {
-            case ModeEnum.Bow:
-                break;
-            case ModeEnum.Gauntlet:
-                break;
-            case ModeEnum.Hammer:
-                break;
-            case ModeEnum.Katana:
-                break;
-            case ModeEnum.Scythe:
-                break;
-            case ModeEnum.Shield:
-                break;
-            case ModeEnum.Tome:
-                break;
-        }
+        if (spriteRenderer.flipX)
+            attackRotate.localScale = new Vector3(-1, 1, 1);
+        else
+            attackRotate.localScale = Vector3.one;
+
+        GameObject newHitbox = Instantiate(attackPrefabs[(int)currentMode - 5], attackParent);
     }
 
     public void OnAttackEnd()

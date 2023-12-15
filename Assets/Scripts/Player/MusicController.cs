@@ -1,9 +1,8 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
 [RequireComponent(typeof(PlayerController))]
-public class MusicController : MonoBehaviour {
+public class MusicController : MonoBehaviour
+{
     private PlayerController playerCtrl;
 
     private int trackIndex = 3;
@@ -18,22 +17,32 @@ public class MusicController : MonoBehaviour {
     };
 
     // Start is called before the first frame update
-    private void Awake() {
+    private void Awake()
+    {
         playerCtrl = GetComponent<PlayerController>();
     }
 
-    private void Start() {
-        AudioManager.Play(tracks[trackIndex]); 
+    private void Start()
+    {
+        for (int i = 0; i < tracks.Length; i++)
+        {
+            AudioManager.Play(tracks[i]);
+        }
+
+        AudioManager.Play(tracks[trackIndex]);
     }
 
-    private void OnEnable() {
+    private void OnEnable()
+    {
         playerCtrl.OnModeChange += SwitchTrack;
     }
-    private void OnDisable() {
+    private void OnDisable()
+    {
         playerCtrl.OnModeChange -= SwitchTrack;
     }
 
-    private void SwitchTrack(int modeIndex){
+    private void SwitchTrack(int modeIndex)
+    {
         trackIndex = modeIndex - 5;
         float timestamp = AudioManager.GetTimestamp();
         AudioManager.Play(tracks[trackIndex], timestamp);

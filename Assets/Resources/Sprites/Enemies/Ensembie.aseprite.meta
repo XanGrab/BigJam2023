@@ -146,7 +146,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 26
+      x: 27
       y: 4
       width: 13
       height: 22
@@ -158,7 +158,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 26, y: 4}
+    uvTransform: {x: 27, y: 4}
   - name: Ensembie_Frame_2
     originalName: 
     pivot: {x: 0.53846157, y: 0}
@@ -166,7 +166,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 47
+      x: 48
       y: 4
       width: 13
       height: 21
@@ -178,7 +178,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 47, y: 4}
+    uvTransform: {x: 48, y: 4}
   - name: Ensembie_Frame_3
     originalName: 
     pivot: {x: 0.53846157, y: 0}
@@ -186,7 +186,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 26
+      x: 27
       y: 34
       width: 13
       height: 22
@@ -198,7 +198,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 26, y: 34}
+    uvTransform: {x: 27, y: 34}
   - name: Ensembie_Frame_4
     originalName: 
     pivot: {x: 0.53846157, y: 0}
@@ -206,7 +206,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 26
+      x: 27
       y: 64
       width: 13
       height: 22
@@ -218,7 +218,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 26, y: 64}
+    uvTransform: {x: 27, y: 64}
   - name: Ensembie_Frame_5
     originalName: 
     pivot: {x: 0.53846157, y: 0}
@@ -226,7 +226,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 47
+      x: 48
       y: 33
       width: 13
       height: 21
@@ -238,7 +238,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 47, y: 33}
+    uvTransform: {x: 48, y: 33}
   - name: Ensembie_Frame_6
     originalName: 
     pivot: {x: 0.53846157, y: 0}
@@ -246,7 +246,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 47
+      x: 48
       y: 62
       width: 13
       height: 21
@@ -258,7 +258,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 47, y: 62}
+    uvTransform: {x: 48, y: 62}
   - name: Ensembie_Frame_7
     originalName: 
     pivot: {x: 0.53846157, y: 0}
@@ -266,7 +266,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 26
+      x: 27
       y: 94
       width: 13
       height: 22
@@ -278,7 +278,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 26, y: 94}
+    uvTransform: {x: 27, y: 94}
   - name: Ensembie_Frame_8
     originalName: 
     pivot: {x: 0.5714286, y: 0}
@@ -287,7 +287,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 4
+      y: 34
       width: 14
       height: 22
     spriteID: f240e6717d248a29ab3dfaf93593b985
@@ -298,17 +298,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
+    uvTransform: {x: 4, y: 34}
   - name: Ensembie_Frame_9
     originalName: 
-    pivot: {x: 0.2857143, y: 0}
+    pivot: {x: 0.33333334, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 34
-      width: 14
+      y: 4
+      width: 15
       height: 22
     spriteID: 31103bf38c24ddfea8c6c0e09fd9cdf8
     spriteBone: []
@@ -318,7 +318,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 34}
+    uvTransform: {x: 4, y: 4}
   - name: Ensembie_Frame_10
     originalName: 
     pivot: {x: 0.5714286, y: 0}
@@ -346,7 +346,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 47
+      x: 48
       y: 91
       width: 13
       height: 21
@@ -358,7 +358,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 47, y: 91}
+    uvTransform: {x: 48, y: 91}
   - name: Ensembie_Frame_12
     originalName: 
     pivot: {x: 0.71428573, y: 0}
@@ -366,7 +366,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 68
+      x: 69
       y: 4
       width: 21
       height: 13
@@ -378,7 +378,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 68, y: 4}
+    uvTransform: {x: 69, y: 4}
   spriteSheetImportData:
   - name: WeaponIcons_0
     originalName: 
@@ -603,9 +603,9 @@ ScriptedImporter:
     - name: Ensembie_Frame_9
       frameIndex: 9
       cellRect:
-        x: 12
+        x: 11
         y: 0
-        width: 14
+        width: 15
         height: 22
       spriteId: 31103bf38c24ddfea8c6c0e09fd9cdf8
     - name: Ensembie_Frame_10
