@@ -6332,26 +6332,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 862976114796207447, guid: 2be64614cb261b748869ac28959b8315, type: 3}
-      propertyPath: m_SpriteSortPoint
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1877333391414482562, guid: 2be64614cb261b748869ac28959b8315, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.707107
-      objectReference: {fileID: 0}
-    - target: {fileID: 1877333391414482562, guid: 2be64614cb261b748869ac28959b8315, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.707107
-      objectReference: {fileID: 0}
     - target: {fileID: 2585460984887775189, guid: 2be64614cb261b748869ac28959b8315, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5436130135936297351, guid: 2be64614cb261b748869ac28959b8315, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 2130536831}
+    - target: {fileID: 3885884215270395201, guid: 2be64614cb261b748869ac28959b8315, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885884215270395201, guid: 2be64614cb261b748869ac28959b8315, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 960
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885884215270395201, guid: 2be64614cb261b748869ac28959b8315, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 540
+      objectReference: {fileID: 0}
     - target: {fileID: 6121053811615619126, guid: 2be64614cb261b748869ac28959b8315, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.19
@@ -6402,17 +6398,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6121053811615619126, guid: 2be64614cb261b748869ac28959b8315, type: 3}
   m_PrefabInstance: {fileID: 2130536819}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2130536831 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1778934035, guid: 2be64614cb261b748869ac28959b8315, type: 3}
-  m_PrefabInstance: {fileID: 2130536819}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ef9228b9154afe468eb032df2e442cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

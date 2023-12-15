@@ -236,6 +236,14 @@ MonoBehaviour:
   afterimagePrefab: {fileID: 6728067167657496833, guid: 30cadf20e3cf2514c8bfdfe7df7a2b2f, type: 3}
   modeWheelTransform: {fileID: 7664177592131480291}
   modeWheelSprite: {fileID: 8853743408375766226}
+  scootSpeeds:
+  - -15
+  - 7
+  - 14
+  - 11
+  - 9
+  - 15
+  - -4
   rb: {fileID: 5073242901404600230}
   spriteRenderer: {fileID: 862976114796207447}
   anim: {fileID: 3742375398058250017}
@@ -248,7 +256,7 @@ MonoBehaviour:
   raycastHeight: 0.1
   accelSpeed_ground: 300
   accelSpeed_air: 300
-  frictionSpeed_ground: 200
+  frictionSpeed_ground: 75
   frictionSpeed_air: 50
   maxSpeed: 12.5
   jumpPower: 26
@@ -634,7 +642,7 @@ Transform:
   m_GameObject: {fileID: 8990009200418171357}
   serializedVersion: 2
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.707107, z: 0.707107}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -691,7 +699,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 1
+  m_SpriteSortPoint: 0
 --- !u!95 &3742375398058250017
 Animator:
   serializedVersion: 5
@@ -725,7 +733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84bacc950d84fe0459b90d849b97d14a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1778934035}
 --- !u!1 &9047916850942700336
 GameObject:
   m_ObjectHideFlags: 0
