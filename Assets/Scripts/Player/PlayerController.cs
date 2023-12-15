@@ -88,12 +88,6 @@ public class PlayerController : Singleton<PlayerController>
     /// <returns>/// Returns if the player is currently able to move (not attacking, dashing, stunned, etc.)</returns>
     private bool CanMove => (true);
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     private void Update()
     {
         if (CanMove)

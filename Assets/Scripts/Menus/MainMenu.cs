@@ -1,10 +1,9 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(UIDocument))]
-public class MainMenu : MonoBehaviour
-{
+public class MainMenu : MonoBehaviour {
     private UIDocument menu;
 
     [SerializeField] private VisualTreeAsset[] Menus;
@@ -17,6 +16,7 @@ public class MainMenu : MonoBehaviour
     private int navIndex = 0;
     
     void Start() {
+        AudioManager.Play("Stage1-Aeolian");
         SetUpMainMenu();
     }
 

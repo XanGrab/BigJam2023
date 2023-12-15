@@ -3,8 +3,7 @@ using UnityEngine.UIElements;
 using System.Collections.Generic;
 
 [RequireComponent(typeof(UIDocument))]
-public class PlayerHUD : Singleton<PlayerHUD>
-{
+public class PlayerHUD : Singleton<PlayerHUD> {
     [SerializeField] private UIDocument playerHUD;
     [SerializeField] private PlayerStats playerStats;
     [SerializeField] private PlayerController playerCtrl;
@@ -16,7 +15,7 @@ public class PlayerHUD : Singleton<PlayerHUD>
 
     private string[] modeNames = {
         "Locrian Longbow",
-        "Phyrgian Phists",
+        "Phrygian Phists",
         "Mixolydian Masherator",
         "Aeolian Adachi",
         "Lydian Lacerator",
@@ -55,7 +54,6 @@ public class PlayerHUD : Singleton<PlayerHUD>
     }
 
     private void SetMode(int modeIndex) {
-        Debug.Log("[PlayerHUD > SetMode] " + modeIndex);
         Sprite modeSprite = modeSprites[modeIndex - 5];
         ModeImage.style.backgroundImage = new StyleBackground(modeSprite);
         ModeLabel.text = modeNames[modeIndex - 5];

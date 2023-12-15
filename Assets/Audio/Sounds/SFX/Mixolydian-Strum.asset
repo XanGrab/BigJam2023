@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8816752589c10db38d9dc986cf8a193, type: 3}
-  m_Name: Stage1-Ionian
+  m_Name: Mixolydian-Strum
   m_EditorClassIdentifier: 
-  name: Stage1-Ionian
-  clip: {fileID: 8300000, guid: 4881e2a7931a8090089ccf0f917aa8c3, type: 3}
-  outputGroup: {fileID: 24300002, guid: 81a9cd0c7f2351cc4828056927d04aa6, type: 2}
-  volume: 0.7
-  loop: 1
+  name: Mixolydian-Strum
+  clip: {fileID: 8300000, guid: 946dc2689a1a6a3939faa237f7a293c0, type: 3}
+  outputGroup: {fileID: 24300002, guid: 48e871d95c63b8bf5bef39c69a781774, type: 2}
+  volume: 0.8
+  loop: 0
