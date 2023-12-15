@@ -9,7 +9,7 @@ public class StaffMeter : ScriptableObject {
 
     public Sprite GetModeSprite(int modeIndex) {
         Debug.Log("[Staff] modeIndex" + modeIndex);
-        spriteIndex = (modeIndex - 5) * 8 + 1;
+        spriteIndex = (modeIndex - 5) * 8;
         Debug.Log("[Staff] spriteIndex" + spriteIndex);
         Sprite modeSprite = sprites[spriteIndex];
         return modeSprite;
