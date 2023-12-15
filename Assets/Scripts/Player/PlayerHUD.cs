@@ -1,41 +1,63 @@
 using UnityEngine;
 using UnityEngine.UIElements;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(UIDocument))]
 public class PlayerHUD : Singleton<PlayerHUD>
 {
     [SerializeField] private UIDocument playerHUD;
     [SerializeField] private PlayerStats playerStats;
+    [SerializeField] private PlayerController playerCtrl;
 
     private ProgressBar Healthbar;
     public VisualElement ModeImage { get; private set; }
+    [SerializeField] private List<Sprite> modeSprites;
+    public Label ModeLabel;
 
-    // Start is called before the first frame update
-    public void Init()
-    {
+    private string[] modeNames = {
+        "Locrian Longbow",
+        "Phyrgian Phists",
+        "Mixolydian Masherator",
+        "Aeolian Adachi",
+        "Lydian Lacerator",
+        "Dorian Defender",
+        "Ionian Invoker",
+    };
+
+    public void Init() {
         if (!playerHUD) return;
 
         var root = playerHUD.rootVisualElement;
         Healthbar = root.Q<ProgressBar>("HealthBar");
         ModeImage = root.Q<VisualElement>("ModeImage");
+        ModeLabel = root.Q<Label>("ModeLabel");
 
         Healthbar.highValue = playerStats.getMaxHP();
         Healthbar.lowValue = 0;
 
         Healthbar.value = playerStats.getCurrHp();
+        // Hardcoded starting value :(
+        SetMode(8);
     }
 
-    private void UpdateHealthBarValue()
-    {
+    private void UpdateHealthBarValue() {
         Healthbar.value = playerStats.getCurrHp();
     }
 
-    private void OnEnable()
-    {
+    private void OnEnable() {
         playerStats.onHPChange += UpdateHealthBarValue;
+        playerCtrl.onModeChange += SetMode;
     }
-    private void OnDisable()
-    {
+
+    private void OnDisable() {
         playerStats.onHPChange -= UpdateHealthBarValue;
+        playerCtrl.onModeChange -= SetMode;
+    }
+
+    private void SetMode(int modeIndex) {
+        Debug.Log("[PlayerHUD > SetMode] " + modeIndex);
+        Sprite modeSprite = modeSprites[modeIndex - 5];
+        ModeImage.style.backgroundImage = new StyleBackground(modeSprite);
+        ModeLabel.text = modeNames[modeIndex - 5];
     }
 }

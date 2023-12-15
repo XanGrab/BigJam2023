@@ -1,4 +1,5 @@
 using BeauRoutine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,6 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private GameObject afterimagePrefab;
     [SerializeField] private Transform modeWheelTransform;
     [SerializeField] private SpriteRenderer modeWheelSprite;
-    [SerializeField] private List<Sprite> modeSprites;
 
     private Routine spinWheelRoutine = Routine.Null;
 
@@ -24,6 +24,7 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private float raycastHeight;
 
     private bool isAttacking;
+    public event Action<int> onModeChange;
 
     private PlayerAnimStateEnum currentAnimation;
     enum PlayerAnimStateEnum
@@ -82,6 +83,7 @@ public class PlayerController : Singleton<PlayerController>
     private const float secsPerAfterimage = 0.01f;
     private float lastTimeSpawnedAfterimage = -100.0f;
     #endregion
+
 
     /// <returns>/// Returns if the player is currently able to move (not attacking, dashing, stunned, etc.)</returns>
     private bool CanMove => (true);
@@ -275,9 +277,8 @@ public class PlayerController : Singleton<PlayerController>
                     if (currIndex == 4)
                         currIndex = 11;
 
-                    ModeEnum newMode = (ModeEnum)currIndex;
-
-                    spinWheelRoutine = Routine.Start(this, SpinWheel(-360f / numModes, newMode));
+                    currentMode = (ModeEnum)currIndex;
+                    spinWheelRoutine = Routine.Start(this, SpinWheel(-360f / numModes, currIndex));
                 }
                 else
                 {
@@ -289,9 +290,8 @@ public class PlayerController : Singleton<PlayerController>
                         if (currIndex == 12)
                             currIndex = 5;
 
-                        ModeEnum newMode = (ModeEnum)currIndex;
-
-                        spinWheelRoutine = Routine.Start(this, SpinWheel(360f / numModes, newMode));
+                        currentMode = (ModeEnum)currIndex;
+                        spinWheelRoutine = Routine.Start(this, SpinWheel(360f / numModes, currIndex));
                     }
                 }
             }
@@ -326,15 +326,14 @@ public class PlayerController : Singleton<PlayerController>
         }
     }
 
-    private IEnumerator SpinWheel(float _degToTurn, ModeEnum _newMode)
-    {
+    private IEnumerator SpinWheel(float _degToTurn, int _modeIndex) {
         Vector3 startAngle = modeWheelTransform.localEulerAngles;
 
         yield return Tween.Float(0, 1, (f) => { modeWheelSprite.SetAlpha(f); }, 0.1f);
 
         yield return Tween.Float(0, _degToTurn, (f) => { modeWheelTransform.localEulerAngles = startAngle + new Vector3(0, 0, f); }, 0.1f);
 
-        SetMode(_newMode);
+        onModeChange?.Invoke(_modeIndex);
 
         yield return Tween.Float(1, 0, (f) => { modeWheelSprite.SetAlpha(f); }, 0.1f);
 
@@ -368,16 +367,7 @@ public class PlayerController : Singleton<PlayerController>
         currentAnimation = _newState;
     }
 
-    private void SetMode(ModeEnum _newMode)
-    {
-        currentMode = _newMode;
-        Sprite modeSprite = modeSprites[(int)currentMode - 5];
-
-        PlayerHUD.Instance.ModeImage.style.backgroundImage = new StyleBackground(modeSprite);
-    }
-
-    public void SpawnHitbox()
-    {
+    public void SpawnHitbox() {
         switch (currentMode)
         {
             case ModeEnum.Bow:
@@ -397,8 +387,7 @@ public class PlayerController : Singleton<PlayerController>
         }
     }
 
-    public void OnAttackEnd()
-    {
+    public void OnAttackEnd() {
         isAttacking = false;
     }
 }

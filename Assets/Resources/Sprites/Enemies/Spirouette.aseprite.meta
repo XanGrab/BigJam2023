@@ -139,6 +139,86 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: Spirouette_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 35
+      width: 16
+      height: 23
+    spriteID: ad875a9a25444ef22a8f03257af1dcfe
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 35}
+  - name: Spirouette_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 66
+      width: 16
+      height: 23
+    spriteID: c29cc2d6f06d7e06997c7c5b166c0723
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 66}
+  - name: Spirouette_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 97
+      width: 16
+      height: 23
+    spriteID: aac0e193822f7176c9c016cefbc96985
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 97}
+  - name: Spirouette_Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 29
+      y: 4
+      width: 16
+      height: 23
+    spriteID: b50b42195e69a794ab67b9da2d474014
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 29, y: 4}
   spriteSheetImportData:
   - name: WeaponIcons_0
     originalName: 
@@ -288,7 +368,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Spirouette
+    - name: Spirouette_Frame_0
       frameIndex: 0
       cellRect:
         x: 8
@@ -296,6 +376,38 @@ ScriptedImporter:
         width: 17
         height: 23
       spriteId: 3e3df30e1474272ec8fa02c1dc454046
+    - name: Spirouette_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 8
+        y: 0
+        width: 16
+        height: 23
+      spriteId: ad875a9a25444ef22a8f03257af1dcfe
+    - name: Spirouette_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 8
+        y: 0
+        width: 16
+        height: 23
+      spriteId: c29cc2d6f06d7e06997c7c5b166c0723
+    - name: Spirouette_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 8
+        y: 0
+        width: 16
+        height: 23
+      spriteId: aac0e193822f7176c9c016cefbc96985
+    - name: Spirouette_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 8
+        y: 0
+        width: 16
+        height: 23
+      spriteId: b50b42195e69a794ab67b9da2d474014
     linkedCells: []
     parentIndex: -1
   platformSettings:

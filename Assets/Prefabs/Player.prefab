@@ -235,14 +235,6 @@ MonoBehaviour:
   afterimagePrefab: {fileID: 6728067167657496833, guid: 30cadf20e3cf2514c8bfdfe7df7a2b2f, type: 3}
   modeWheelTransform: {fileID: 7664177592131480291}
   modeWheelSprite: {fileID: 8853743408375766226}
-  modeSprites:
-  - {fileID: -6794938024564825155, guid: 1822cff1c3c98b940b65884309d917fc, type: 3}
-  - {fileID: -8412038956687951044, guid: 1822cff1c3c98b940b65884309d917fc, type: 3}
-  - {fileID: 4223178091517091974, guid: 1822cff1c3c98b940b65884309d917fc, type: 3}
-  - {fileID: 7390754260812734790, guid: 1822cff1c3c98b940b65884309d917fc, type: 3}
-  - {fileID: 9098852712418978275, guid: 1822cff1c3c98b940b65884309d917fc, type: 3}
-  - {fileID: -3584498360426262349, guid: 1822cff1c3c98b940b65884309d917fc, type: 3}
-  - {fileID: 3688048915339991569, guid: 1822cff1c3c98b940b65884309d917fc, type: 3}
   rb: {fileID: 5073242901404600230}
   spriteRenderer: {fileID: 862976114796207447}
   anim: {fileID: 3742375398058250017}
@@ -414,6 +406,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHUD: {fileID: 2073634884948809324}
   playerStats: {fileID: 1778934040}
+  playerCtrl: {fileID: 1778934035}
+  modeSprites:
+  - {fileID: -6794938024564825155, guid: 1822cff1c3c98b940b65884309d917fc, type: 3}
+  - {fileID: -8412038956687951044, guid: 1822cff1c3c98b940b65884309d917fc, type: 3}
+  - {fileID: 4223178091517091974, guid: 1822cff1c3c98b940b65884309d917fc, type: 3}
+  - {fileID: 7390754260812734790, guid: 1822cff1c3c98b940b65884309d917fc, type: 3}
+  - {fileID: 9098852712418978275, guid: 1822cff1c3c98b940b65884309d917fc, type: 3}
+  - {fileID: -3584498360426262349, guid: 1822cff1c3c98b940b65884309d917fc, type: 3}
+  - {fileID: 3688048915339991569, guid: 1822cff1c3c98b940b65884309d917fc, type: 3}
 --- !u!1 &4677237188674921663
 GameObject:
   m_ObjectHideFlags: 0
