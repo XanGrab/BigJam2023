@@ -10,11 +10,12 @@ Now the Maestro must set things right and demonstrate his mastery of the mystic 
 
 ## How to Play
 
-| **Action** | **Key** |
-| :---: | :---: |
-| Move | WADS / Arrow Keys |
-| Attack | Z |
+| **Action** | **Keyboard & Mouse** | **Gamepad** |
+| :---: | :---: | :---: |
+| Move | WADS / Arrow Keys | Left Stick |
+| Attack | Z / LMC | West Button |
+| Jump | Space | South Button |
 
 ## [Play Now!](https://xangrab.github.io/ModeJam2023/)
 
-*Created for Bigmode Game Jam 2023
+*Created for Bigmode Game Jam 2023*
