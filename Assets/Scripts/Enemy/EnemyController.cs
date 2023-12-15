@@ -1,8 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
-{
+public class EnemyController : MonoBehaviour {
     [Header("External References")]
     [SerializeField] private GameObject afterimagePrefab;
 
@@ -14,15 +13,14 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private List<Transform> raycastPoints;
     [SerializeField] private float raycastHeight;
 
-    private PlayerAnimStateEnum currentAnimation;
-
-    //Animation states
-    enum PlayerAnimStateEnum
-    {
-        Player_Idle,
-        Player_Jump_Up,
-        Player_Jump_Down,
+    private AnimState currentAnimation;
+    enum AnimState {
+        Idle,
+        Walking,
+        Attack,
+        Death
     }
+
 
     [Header("Parameters")]
     [SerializeField] private float accelSpeed_ground;
@@ -49,10 +47,9 @@ public class EnemyController : MonoBehaviour
     /// <returns>/// Returns if the player is currently able to move (not attacking, dashing, stunned, etc.)</returns>
     private bool CanMove => (true);
 
-    private void Update()
-    {
-        if (CanMove)
-        {
+    private void Update() {
+        if (CanMove) {
+            // ChangeAnimationState( AnimState.Walking );
             #region Acceleration
             //Get gravityless velocity
             Vector3 noGravVelocity = rb.velocity;
@@ -173,23 +170,14 @@ public class EnemyController : MonoBehaviour
         }
 
         //Set animation states
-        if (grounded)
-        {
-            ChangeAnimationState(PlayerAnimStateEnum.Player_Idle);
-        }
-        else
-        {
-            if (rb.velocity.y >= 0)
-                ChangeAnimationState(PlayerAnimStateEnum.Player_Jump_Up);
-            else
-                ChangeAnimationState(PlayerAnimStateEnum.Player_Jump_Down);
+        if (grounded) {
+            // ChangeAnimationState( AnimState.Idle );
         }
     }
 
 
     // Update is called once per frame
-    void FixedUpdate()
-    {
+    void FixedUpdate() {
         //Ground checking
         bool lastGrounded = grounded;
 
@@ -226,59 +214,24 @@ public class EnemyController : MonoBehaviour
         }
 
         //TODO: Enemy atttacks
-
-        //Boom attack
-        //if (InputHandler.Instance.LightAttack.Pressed)
-        //{
-        //    float angle;
-
-        //    if (InputHandler.Instance.Direction.magnitude > epsilon)
-        //    {
-        //        //Attack in the held direction
-        //        angle = Mathf.Atan2(InputHandler.Instance.Direction.y, InputHandler.Instance.Direction.x);
-        //        angle = Mathf.Rad2Deg * angle;
-
-        //        angle = Mathf.RoundToInt(angle / 90.0f) * 90.0f;
-        //    }
-        //    else
-        //    {
-        //        //Attack in the faced direction (horizontally)
-        //        if (!spriteRenderer.flipX)
-        //            angle = 0;
-        //        else
-        //            angle = 180;
-        //    }
-
-        //    boom_anim.transform.eulerAngles = new Vector3(0, 0, angle);
-
-        //    boom_anim.SetTrigger("Boom");
-        //}
-
-        ////Space release gravity
-        //if (InputHandler.Instance.Jump.Released && rb.velocity.y > 0)
-        //{
-        //    rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * spaceReleaseGravMult);
-        //}
     }
 
-    private void Jump()
-    {
+    private void ChangeAnimationState(AnimState _newState) {
+        //Stop same animation from interrupting itself
+        if (currentAnimation == _newState)
+            return;
+
+        //Play new animation
+        anim.Play( currentAnimation.ToString() );
+        //Update current anim state var
+        currentAnimation = _newState;
+    }
+
+    private void Jump() {
         useGravity = true;
 
         rb.velocity = new Vector2(rb.velocity.x, jumpPower);
 
         grounded = false;
-    }
-
-    private void ChangeAnimationState(PlayerAnimStateEnum _newState) {
-        //Stop same animation from interrupting itself
-        if (currentAnimation == _newState || !anim)
-            return;
-
-        //Play new animation
-        anim.Play(_newState.ToString());
-
-        //Update current anim state var
-        currentAnimation = _newState;
     }
 }

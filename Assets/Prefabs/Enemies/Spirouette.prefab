@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 6799303452642926646}
   - component: {fileID: 3806690520179971843}
   m_Layer: 6
-  m_Name: Ensembie
+  m_Name: Spirouette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0199f715d699bfe4c9636803b1afcf55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 2
+  cost: 3
   maxHp: 3
 --- !u!114 &6799303452642926646
 MonoBehaviour:
@@ -293,7 +293,7 @@ SpriteRenderer:
   m_SortingLayerID: 1709670231
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9163526341429641413, guid: bf53a8d8d971da308be3b171652bcc2f, type: 3}
+  m_Sprite: {fileID: 8292985927797121981, guid: 8323a5777768b1e14995ea7b26d8c5ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -314,7 +314,7 @@ Animator:
   m_GameObject: {fileID: 3909181384927357676}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: -1553269501087819144, guid: bf53a8d8d971da308be3b171652bcc2f, type: 3}
+  m_Controller: {fileID: -1719840947216544837, guid: 8323a5777768b1e14995ea7b26d8c5ae, type: 3}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

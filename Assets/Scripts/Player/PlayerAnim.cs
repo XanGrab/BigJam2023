@@ -1,17 +1,14 @@
 using UnityEngine;
 
-public class PlayerAnim : MonoBehaviour
-{
+public class PlayerAnim : MonoBehaviour {
     [SerializeField] private PlayerController player;
 
-    public void SpawnHitbox()
-    {
+    public void SpawnHitbox() {
         player.SpawnHitbox();
         player.Scoot();
     }
 
-    public void OnAttackEnd()
-    {
+    public void OnAttackEnd() {
         player.OnAttackEnd();
     }
 }
