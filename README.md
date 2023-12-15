@@ -14,6 +14,7 @@ Now the Maestro must set things right and demonstrate his mastery of the mystic 
 | :---: | :---: | :---: |
 | Move | WADS / Arrow Keys | Left Stick |
 | Attack | Z / LMC | West Button |
+| Mode | E / Q | Left & Right Bumper |
 | Jump | Space | South Button |
 
 ## [Play Now!](https://xangrab.github.io/ModeJam2023/)
