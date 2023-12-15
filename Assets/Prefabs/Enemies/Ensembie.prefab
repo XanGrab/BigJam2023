@@ -34,6 +34,38 @@ Transform:
   - {fileID: 2531811665689067962}
   m_Father: {fileID: 134125643847250077}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2048251584757665341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2559922133315100318}
+  m_Layer: 7
+  m_Name: AttackRotate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2559922133315100318
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048251584757665341}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5777090315327418749}
+  m_Father: {fileID: 134125643847250077}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2258444098292548264
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,6 +135,7 @@ Transform:
   - {fileID: 2528075033348063314}
   - {fileID: 7363949355092999946}
   - {fileID: 7907418290813050242}
+  - {fileID: 2559922133315100318}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &6341320152914148486
@@ -191,11 +224,11 @@ MonoBehaviour:
   - {fileID: 3004092356427066417}
   - {fileID: 2531811665689067962}
   raycastHeight: 0.1
-  accelSpeed_ground: 300
+  accelSpeed_ground: 350
   accelSpeed_air: 300
-  frictionSpeed_ground: 200
+  frictionSpeed_ground: 75
   frictionSpeed_air: 50
-  maxSpeed: 6.25
+  maxSpeed: 4.25
   jumpPower: 26
   gravUp: 70
   gravDown: 95
@@ -203,6 +236,12 @@ MonoBehaviour:
   terrainLayer:
     serializedVersion: 2
     m_Bits: 256
+  distToPlayerForAttack: 1.5
+  scootSpeed: 10
+  attackPrefab: {fileID: 8516697484728905800, guid: c9ea118c72c45cd4e8fde9826e3fb551, type: 3}
+  attackParent: {fileID: 5777090315327418749}
+  attackRotate: {fileID: 2559922133315100318}
+  isSpin: 0
 --- !u!114 &3806690520179971843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,6 +269,7 @@ GameObject:
   - component: {fileID: 1617111721308622421}
   - component: {fileID: 6472075511190147839}
   - component: {fileID: 3173065806124735618}
+  - component: {fileID: 6739243497500901708}
   m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
@@ -325,6 +365,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6739243497500901708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3909181384927357676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79e72943dec6b2943ad25734ebeffc81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 6799303452642926646}
 --- !u!1 &5032055930986433073
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,6 +508,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7363949355092999946}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8805051964390952961
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5777090315327418749}
+  m_Layer: 7
+  m_Name: AttackParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5777090315327418749
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8805051964390952961}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2559922133315100318}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1471900853551861933
 PrefabInstance:

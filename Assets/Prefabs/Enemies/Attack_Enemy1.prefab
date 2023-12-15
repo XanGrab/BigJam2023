@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 441245548957387341}
   - component: {fileID: 2405190969664426930}
   - component: {fileID: 7946168898319823598}
-  m_Layer: 11
-  m_Name: AttackHitbox_Gauntlet
+  m_Layer: 14
+  m_Name: Attack_Enemy1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeTillDestroy: 0.1
   <DestroyOnHit>k__BackingField: 0
-  <Damage>k__BackingField: 5
+  <Damage>k__BackingField: 15
 --- !u!64 &7946168898319823598
 MeshCollider:
   m_ObjectHideFlags: 0

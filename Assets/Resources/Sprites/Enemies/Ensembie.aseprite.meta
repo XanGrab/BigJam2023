@@ -281,7 +281,7 @@ ScriptedImporter:
     uvTransform: {x: 27, y: 94}
   - name: Ensembie_Frame_8
     originalName: 
-    pivot: {x: 0.5714286, y: 0}
+    pivot: {x: 0.42857146, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -301,7 +301,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 34}
   - name: Ensembie_Frame_9
     originalName: 
-    pivot: {x: 0.33333334, y: 0}
+    pivot: {x: 0.13333334, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -321,7 +321,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: Ensembie_Frame_10
     originalName: 
-    pivot: {x: 0.5714286, y: 0}
+    pivot: {x: 0.35714287, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -379,6 +379,26 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 69, y: 4}
+  - name: Ensembie_Frame_13
+    originalName: 
+    pivot: {x: 0.71428573, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 69
+      y: 25
+      width: 21
+      height: 13
+    spriteID: 776e1ebbd6d20fd45bbd444fa37a1411
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 69, y: 25}
   spriteSheetImportData:
   - name: WeaponIcons_0
     originalName: 
@@ -595,7 +615,7 @@ ScriptedImporter:
     - name: Ensembie_Frame_8
       frameIndex: 8
       cellRect:
-        x: 8
+        x: 10
         y: 0
         width: 14
         height: 22
@@ -603,7 +623,7 @@ ScriptedImporter:
     - name: Ensembie_Frame_9
       frameIndex: 9
       cellRect:
-        x: 11
+        x: 14
         y: 0
         width: 15
         height: 22
@@ -611,7 +631,7 @@ ScriptedImporter:
     - name: Ensembie_Frame_10
       frameIndex: 10
       cellRect:
-        x: 8
+        x: 11
         y: 0
         width: 14
         height: 22
@@ -632,6 +652,14 @@ ScriptedImporter:
         width: 21
         height: 13
       spriteId: ac73486b1c9977bba8fd9d9fa435a757
+    - name: Ensembie_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 1
+        y: 0
+        width: 21
+        height: 13
+      spriteId: 776e1ebbd6d20fd45bbd444fa37a1411
     linkedCells: []
     parentIndex: -1
   platformSettings:

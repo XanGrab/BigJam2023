@@ -219,6 +219,86 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 29, y: 4}
+  - name: Spirouette_Frame_5
+    originalName: 
+    pivot: {x: 0.4375, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 29
+      y: 35
+      width: 16
+      height: 23
+    spriteID: f0c86a23a8f531443aa5330bc6f9d069
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 29, y: 35}
+  - name: Spirouette_Frame_6
+    originalName: 
+    pivot: {x: 0.7894737, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 29
+      y: 66
+      width: 19
+      height: 17
+    spriteID: 429b510640848c349b1dcc9e8e9b7939
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 29, y: 66}
+  - name: Spirouette_Frame_7
+    originalName: 
+    pivot: {x: 0.6086957, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 29
+      y: 91
+      width: 23
+      height: 11
+    spriteID: 8f81fb950006197478e28f934aa234a6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 29, y: 91}
+  - name: Spirouette_Frame_8
+    originalName: 
+    pivot: {x: 0.6086957, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 29
+      y: 110
+      width: 23
+      height: 11
+    spriteID: 28b69844fd821e2418507a28f5421461
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 29, y: 110}
   spriteSheetImportData:
   - name: WeaponIcons_0
     originalName: 
@@ -408,6 +488,38 @@ ScriptedImporter:
         width: 16
         height: 23
       spriteId: b50b42195e69a794ab67b9da2d474014
+    - name: Spirouette_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 9
+        y: 0
+        width: 16
+        height: 23
+      spriteId: f0c86a23a8f531443aa5330bc6f9d069
+    - name: Spirouette_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 1
+        y: 0
+        width: 19
+        height: 17
+      spriteId: 429b510640848c349b1dcc9e8e9b7939
+    - name: Spirouette_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 2
+        y: 0
+        width: 23
+        height: 11
+      spriteId: 8f81fb950006197478e28f934aa234a6
+    - name: Spirouette_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 2
+        y: 0
+        width: 23
+        height: 11
+      spriteId: 28b69844fd821e2418507a28f5421461
     linkedCells: []
     parentIndex: -1
   platformSettings:

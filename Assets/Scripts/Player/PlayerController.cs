@@ -37,28 +37,27 @@ public class PlayerController : Singleton<PlayerController>
         Player_Idle,
         Player_Jump_Up,
         Player_Jump_Down,
-        Player_Drill_Right,
+        Player_Run,
         Player_Drill_Down,
-
-        Bow_light = 5,
-        Gauntlet_light = 6,
-        Hammer_light = 7,
-        Katana_light = 8,
-        Scythe_light = 9,
-        Shield_light = 10,
-        Tome_light = 11
+        Tome_light = 5,
+        Shield_light = 6,
+        Gauntlet_light = 7,
+        Scythe_light = 8,
+        Hammer_light = 9,
+        Katana_light = 10,
+        Bow_light = 11,
     }
 
-    private ModeEnum currentMode = ModeEnum.Katana;
+    private ModeEnum currentMode = ModeEnum.Tome;
     enum ModeEnum
     {
-        Bow = 5,
-        Gauntlet = 6,
-        Hammer = 7,
-        Katana = 8,
-        Scythe = 9,
-        Shield = 10,
-        Tome = 11
+        Tome = 5,
+        Shield = 6,
+        Gauntlet = 7,
+        Scythe = 8,
+        Hammer = 9,
+        Katana = 10,
+        Bow = 11,
     }
     float numModes = 7;
 
@@ -88,7 +87,6 @@ public class PlayerController : Singleton<PlayerController>
     private const float secsPerAfterimage = 0.01f;
     private float lastTimeSpawnedAfterimage = -100.0f;
     #endregion
-
 
     /// <returns>/// Returns if the player is currently able to move (not attacking, dashing, stunned, etc.)</returns>
     private bool CanMove => (true);
@@ -222,7 +220,10 @@ public class PlayerController : Singleton<PlayerController>
         //Set animation states
         if (grounded)
         {
-            ChangeAnimationState(PlayerAnimStateEnum.Player_Idle);
+            if (Mathf.Abs(rb.velocity.x) > epsilon)
+                ChangeAnimationState(PlayerAnimStateEnum.Player_Run);
+            else
+                ChangeAnimationState(PlayerAnimStateEnum.Player_Idle);
         }
         else
         {

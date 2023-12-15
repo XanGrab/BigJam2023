@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class EnemyStats : MonoBehaviour {
+public class EnemyStats : MonoBehaviour
+{
     [SerializeField] private int cost;
     [SerializeField] private float maxHp;
     private float currHp;
@@ -8,12 +9,19 @@ public class EnemyStats : MonoBehaviour {
     public int getCost() => cost;
 
     // Start is called before the first frame update
-    void Start() {
+    void Start()
+    {
+        maxHp += EnemySpawner.Instance.MonsterPoints;
+
         currHp = maxHp;
     }
 
-    public void TakeDamage(float _dmg) {
+    public void TakeDamage(float _dmg)
+    {
         currHp = Mathf.Max(0, currHp - _dmg);
+
+        GameObject vfx = Instantiate(HitVFX.Instance.HitVFXPrefab, null);
+        vfx.transform.position = transform.position;
 
         //Healthbar.Instance.UpdateHPBar(currHp / maxHp);
 
@@ -21,8 +29,9 @@ public class EnemyStats : MonoBehaviour {
             Die();
     }
 
-    private void Die() {
-        Destroy(gameObject);
+    private void Die()
+    {
+        GetComponent<EnemyController>().OnDeath();
     }
 
     /// <summary>
@@ -30,7 +39,8 @@ public class EnemyStats : MonoBehaviour {
     /// </summary>
     /// <param name="_heal"> amount of health to heal </param>
     /// <returns> true if the healing was successful, false if the player is already at full hp.</returns>
-    public bool Heal(float _heal) {
+    public bool Heal(float _heal)
+    {
         if (currHp == maxHp)
             return false;
 

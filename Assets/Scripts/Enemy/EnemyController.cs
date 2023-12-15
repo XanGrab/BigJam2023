@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour {
+public class EnemyController : MonoBehaviour
+{
     [Header("External References")]
     [SerializeField] private GameObject afterimagePrefab;
 
@@ -13,14 +14,16 @@ public class EnemyController : MonoBehaviour {
     [SerializeField] private List<Transform> raycastPoints;
     [SerializeField] private float raycastHeight;
 
+    private bool isDead = false;
+
     private AnimState currentAnimation;
-    enum AnimState {
+    enum AnimState
+    {
         Idle,
         Walking,
         Attack,
         Death
     }
-
 
     [Header("Parameters")]
     [SerializeField] private float accelSpeed_ground;
@@ -36,6 +39,16 @@ public class EnemyController : MonoBehaviour {
     [Space(5)]
     [SerializeField] private LayerMask terrainLayer;
 
+    [SerializeField] private float distToPlayerForAttack = 1.5f;
+    [SerializeField] private float scootSpeed;
+    [SerializeField] private GameObject attackPrefab;
+    [SerializeField] private Transform attackParent;
+    [SerializeField] private Transform attackRotate;
+
+    [SerializeField] private bool isSpin = false;
+
+    private bool isAttacking;
+
     private bool grounded = false;
     private bool useGravity = true;
     private float lastTimePressedJump = -100.0f;
@@ -47,8 +60,10 @@ public class EnemyController : MonoBehaviour {
     /// <returns>/// Returns if the player is currently able to move (not attacking, dashing, stunned, etc.)</returns>
     private bool CanMove => (true);
 
-    private void Update() {
-        if (CanMove) {
+    private void Update()
+    {
+        if (CanMove)
+        {
             // ChangeAnimationState( AnimState.Walking );
             #region Acceleration
             //Get gravityless velocity
@@ -61,9 +76,22 @@ public class EnemyController : MonoBehaviour {
             Vector3 dist = (PlayerController.Instance.transform.position - transform.position);
             dist.y = 0;
             Vector3 currInput = new Vector3();
-            //XZ Friction + acceleration
-            if (dist.magnitude > 2)
-                currInput = dist.normalized;
+
+            if (!isDead)
+            {
+                //XZ Friction + acceleration
+                if (dist.magnitude > distToPlayerForAttack)
+                    currInput = dist.normalized;
+                else
+                {
+                    if (!isAttacking)
+                    {
+                        ChangeAnimationState(AnimState.Attack);
+
+                        isAttacking = true;
+                    }
+                }
+            }
 
             if (currInput.magnitude > 0.05f)
                 currInput.Normalize();
@@ -160,6 +188,9 @@ public class EnemyController : MonoBehaviour {
             }
         }
 
+        if (isAttacking || isDead)
+            return;
+
         //Gravity
         if (useGravity)
         {
@@ -170,14 +201,19 @@ public class EnemyController : MonoBehaviour {
         }
 
         //Set animation states
-        if (grounded) {
-            // ChangeAnimationState( AnimState.Idle );
+        if (grounded)
+        {
+            if (Mathf.Abs(rb.velocity.x) > epsilon)
+                ChangeAnimationState(AnimState.Walking);
+            else
+                ChangeAnimationState(AnimState.Idle);
         }
     }
 
 
     // Update is called once per frame
-    void FixedUpdate() {
+    void FixedUpdate()
+    {
         //Ground checking
         bool lastGrounded = grounded;
 
@@ -216,22 +252,74 @@ public class EnemyController : MonoBehaviour {
         //TODO: Enemy atttacks
     }
 
-    private void ChangeAnimationState(AnimState _newState) {
+    private void ChangeAnimationState(AnimState _newState, bool doAnyways = false)
+    {
         //Stop same animation from interrupting itself
         if (currentAnimation == _newState)
             return;
 
-        //Play new animation
-        anim.Play( currentAnimation.ToString() );
+        if (!isSpin || doAnyways)
+        {
+            //Play new animation
+            anim.Play(_newState.ToString());
+        }
+
         //Update current anim state var
         currentAnimation = _newState;
     }
 
-    private void Jump() {
+    private void Jump()
+    {
         useGravity = true;
 
         rb.velocity = new Vector2(rb.velocity.x, jumpPower);
 
         grounded = false;
+    }
+
+    public void SpawnHitbox()
+    {
+        if (spriteRenderer.flipX)
+            attackRotate.localScale = new Vector3(-1, 1, 1);
+        else
+            attackRotate.localScale = Vector3.one;
+
+        GameObject newHitbox = Instantiate(attackPrefab, attackParent);
+    }
+
+    public void OnAttackEnd()
+    {
+        isAttacking = false;
+    }
+
+    public void Scoot()
+    {
+        float speedToUse = scootSpeed;
+
+        if (spriteRenderer.flipX)
+            speedToUse *= -1;
+
+        if (isSpin)
+        {
+            Vector3 dist = (PlayerController.Instance.transform.position - transform.position).normalized;
+            dist.y = 0;
+            rb.velocity = dist * scootSpeed;
+        }
+        else
+            rb.velocity = new Vector3(speedToUse, rb.velocity.y, rb.velocity.z);
+    }
+
+    public void OnDeath()
+    {
+        if (isDead)
+            return;
+
+        ChangeAnimationState(AnimState.Death, true);
+
+        rb.velocity = Vector3.zero;
+        isDead = true;
+
+        PlayerHUD.Instance.OnEnemyKilled();
+        Debug.Log("enemy killed!");
     }
 }

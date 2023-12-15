@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 441245548957387341}
   - component: {fileID: 2405190969664426930}
   - component: {fileID: 7946168898319823598}
-  m_Layer: 11
-  m_Name: AttackHitbox_Gauntlet
+  m_Layer: 14
+  m_Name: Attack_Enemy2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 8516697484728905800}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.5, y: 0.5, z: 0}
+  m_LocalScale: {x: 1.25, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeTillDestroy: 0.1
   <DestroyOnHit>k__BackingField: 0
-  <Damage>k__BackingField: 5
+  <Damage>k__BackingField: 15
 --- !u!64 &7946168898319823598
 MeshCollider:
   m_ObjectHideFlags: 0

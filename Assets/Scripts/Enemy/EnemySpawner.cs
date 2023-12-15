@@ -1,8 +1,9 @@
-using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour {
+public class EnemySpawner : Singleton<EnemySpawner>
+{
     [SerializeField] private List<GameObject> enemyLibrary = new List<GameObject>();
 
     [SerializeField]
@@ -18,13 +19,15 @@ public class EnemySpawner : MonoBehaviour {
     /// </summary>
     [SerializeField] private float randomVariation;
 
-    [SerializeField] private int monsterPoints = 5;
+    [SerializeField] private float monsterPoints = 5;
+    public float MonsterPoints => monsterPoints;
 
-    [SerializeField] private int growthRate = 1;
+    [SerializeField] private float growthRate = 1;
 
     private int cheapestCost;
 
-    private void Start() {
+    private void Start()
+    {
         ValidateEnemyList();
         ValidateSpawnRegions();
         cheapestCost = FindCheapestCost();
@@ -32,14 +35,20 @@ public class EnemySpawner : MonoBehaviour {
         StartCoroutine(incrementMonsterPoints());
     }
 
-    private void Update() {
-        while(monsterPoints > cheapestCost){
+    private void Update()
+    {
+        while (monsterPoints > cheapestCost)
+        {
             TrySpawnMonster();
         }
+
+        growthRate += Time.deltaTime * 0.05f;
     }
 
-    public void TrySpawnMonster(){
-        if(enemyLibrary?.Count < 1) {
+    public void TrySpawnMonster()
+    {
+        if (enemyLibrary?.Count < 1)
+        {
             Debug.LogWarning("[EnemySpawner > findCheapestEnmey] EnemyLibrary is Empty");
             return;
         }
@@ -54,10 +63,12 @@ public class EnemySpawner : MonoBehaviour {
 
     }
 
-    private void ValidateEnemyList() {
+    private void ValidateEnemyList()
+    {
         List<GameObject> temp = new List<GameObject>();
 
-        foreach (GameObject obj in enemyLibrary) {
+        foreach (GameObject obj in enemyLibrary)
+        {
             if (obj.GetComponent<EnemyStats>())
                 temp.Add(obj);
         }
@@ -65,10 +76,12 @@ public class EnemySpawner : MonoBehaviour {
         enemyLibrary = temp;
     }
 
-    private void ValidateSpawnRegions() {
+    private void ValidateSpawnRegions()
+    {
         List<GameObject> temp = new List<GameObject>();
 
-        foreach (GameObject obj in spawnRegions) {
+        foreach (GameObject obj in spawnRegions)
+        {
             if (obj.GetComponent<BoxCollider>())
                 temp.Add(obj);
         }
@@ -76,15 +89,18 @@ public class EnemySpawner : MonoBehaviour {
         spawnRegions = temp;
     }
 
-    private int FindCheapestCost() {
-        if(enemyLibrary?.Count < 1) {
+    private int FindCheapestCost()
+    {
+        if (enemyLibrary?.Count < 1)
+        {
             Debug.LogError("[EnemySpawner > findCheapestEnmey] EnemyLibrary is empty");
             return -1;
         }
 
         int cheapestCost = enemyLibrary[0].GetComponent<EnemyStats>().getCost();
 
-        foreach (GameObject enemy in enemyLibrary) {
+        foreach (GameObject enemy in enemyLibrary)
+        {
             if (enemy.GetComponent<EnemyStats>().getCost() < cheapestCost)
                 cheapestCost = enemy.GetComponent<EnemyStats>().getCost();
         }
@@ -92,22 +108,27 @@ public class EnemySpawner : MonoBehaviour {
         return cheapestCost;
     }
 
-    private List<GameObject> GetAvailableEnemies() {
+    private List<GameObject> GetAvailableEnemies()
+    {
         List<GameObject> ret = new List<GameObject>();
 
-        foreach (GameObject enemy in enemyLibrary) {
-            if (enemy.GetComponent<EnemyStats>().getCost() <= monsterPoints){
+        foreach (GameObject enemy in enemyLibrary)
+        {
+            if (enemy.GetComponent<EnemyStats>().getCost() <= monsterPoints)
+            {
                 ret.Add(enemy);
             }
         }
         return ret;
     }
 
-    public void SetGrowthRate(int newRate){
+    public void SetGrowthRate(int newRate)
+    {
         growthRate = newRate;
     }
 
-    private void Spawn(GameObject enemy, Bounds bounds){
+    private void Spawn(GameObject enemy, Bounds bounds)
+    {
         // Debug.Log("[EnemySpawner] Spawn!");
         Vector3 randPoint = new Vector3(
             Random.Range(bounds.min.x, bounds.max.x),
@@ -118,7 +139,8 @@ public class EnemySpawner : MonoBehaviour {
 
     }
 
-    private IEnumerator incrementMonsterPoints() {
+    private IEnumerator incrementMonsterPoints()
+    {
         float randf = Random.Range(0f, randomVariation);
         yield return new WaitForSeconds(spawnInterval + randf);
         monsterPoints += growthRate;
