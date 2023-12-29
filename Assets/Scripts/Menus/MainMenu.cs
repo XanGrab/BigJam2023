@@ -63,14 +63,20 @@ public class MainMenu : MonoBehaviour {
         creditsBackButton.clicked += CreditsBackButtonPress;
     }
     
-    void StartButtonPress() => SceneManager.LoadScene("Gameplay");
+    void StartButtonPress() {
+        AudioManager.Play("Button");
+        SceneManager.LoadScene("Gameplay");
+    }
+
     void CreditsButtonPress() {
+        AudioManager.Play("Button");
         menu.visualTreeAsset = Menus[1];
         menu.visualTreeAsset.Instantiate();
         SetUpCredits();
     }
 
     void CreditsBackButtonPress() {
+        AudioManager.Play("Button");
         menu.visualTreeAsset = Menus[0];
         menu.visualTreeAsset.Instantiate();
         SetUpMainMenu();
