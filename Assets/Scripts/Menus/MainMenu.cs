@@ -16,7 +16,6 @@ public class MainMenu : MonoBehaviour {
     private int navIndex = 0;
     
     void Start() {
-        // AudioManager.Play("Stage1-Aeolian");
         SetUpMainMenu();
     }
 
@@ -64,19 +63,19 @@ public class MainMenu : MonoBehaviour {
     }
     
     void StartButtonPress() {
-        AudioManager.Play("Button");
+        AudioManager.PlayOnce("Button");
         SceneManager.LoadScene("Gameplay");
     }
 
     void CreditsButtonPress() {
-        AudioManager.Play("Button");
+        AudioManager.PlayOnce("Button");
         menu.visualTreeAsset = Menus[1];
         menu.visualTreeAsset.Instantiate();
         SetUpCredits();
     }
 
     void CreditsBackButtonPress() {
-        AudioManager.Play("Button");
+        AudioManager.PlayOnce("Button");
         menu.visualTreeAsset = Menus[0];
         menu.visualTreeAsset.Instantiate();
         SetUpMainMenu();

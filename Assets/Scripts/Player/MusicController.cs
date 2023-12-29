@@ -5,19 +5,9 @@ public class MusicController : MonoBehaviour
 {
     private PlayerController playerCtrl;
 
-    private int trackIndex = 3;
+    private int trackIndex = 0;
 
     public Sound music;
-
-    private string[] tracks = {
-        "Stage1-Locrian",
-        "Stage1-Phrygian",
-        "Stage1-Mixolydian",
-        "Stage1-Aeolian",
-        "Stage1-Lydian",
-        "Stage1-Dorian",
-        "Stage1-Ionian",
-    };
 
     // Start is called before the first frame update
     private void Awake() {
@@ -26,7 +16,8 @@ public class MusicController : MonoBehaviour
     }
 
     private void Start() {
-        AudioManager.Play(tracks[trackIndex]);
+        music.setClipIndex(trackIndex);
+        AudioManager.Play(music.name);
     }
 
     private void OnEnable() {

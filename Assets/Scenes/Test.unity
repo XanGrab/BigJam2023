@@ -528,6 +528,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d74c3f43f9cc9f418cd4aa9a613d76e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeTillDestroy: -1
+  <DestroyOnHit>k__BackingField: 0
   <Damage>k__BackingField: 20
 --- !u!65 &808679175
 BoxCollider:
@@ -601,6 +603,10 @@ PrefabInstance:
     - target: {fileID: 2634640655617729200, guid: cd8f808da418c66419dc9f90c8bf3664, type: 3}
       propertyPath: m_Name
       value: Ensembie
+      objectReference: {fileID: 0}
+    - target: {fileID: 2634640655617729200, guid: cd8f808da418c66419dc9f90c8bf3664, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -715,6 +721,10 @@ PrefabInstance:
     - target: {fileID: 2634640655617729200, guid: fb1f864f60e5d0d2ab1172df10539b1c, type: 3}
       propertyPath: m_Name
       value: Spirouette
+      objectReference: {fileID: 0}
+    - target: {fileID: 2634640655617729200, guid: fb1f864f60e5d0d2ab1172df10539b1c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

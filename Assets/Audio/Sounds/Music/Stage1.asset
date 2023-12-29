@@ -21,6 +21,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 39e37fa7b1b3d8a1cb48c2d9c8aaee9b, type: 3}
   - {fileID: 8300000, guid: 4881e2a7931a8090089ccf0f917aa8c3, type: 3}
   clipOrder: 2
+  outputGroup: {fileID: 24300002, guid: 81a9cd0c7f2351cc4828056927d04aa6, type: 2}
   volume: 0.75
   pitch: 0
   loop: 1
