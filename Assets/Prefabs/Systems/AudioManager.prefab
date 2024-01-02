@@ -151,6 +151,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   persistSounds:
-  - {fileID: 11400000, guid: ac271f23c7e5208a6b62afb3697a94ce, type: 2}
   - {fileID: 11400000, guid: c0d7f147768adf1fab90d46b5d04c62b, type: 2}
-  playOnAwake: 1
+  - {fileID: 11400000, guid: ac271f23c7e5208a6b62afb3697a94ce, type: 2}
+  playOnAwake: 0

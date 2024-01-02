@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using SoundSystem;
 
 [RequireComponent(typeof(UIDocument))]
 public class MainMenu : MonoBehaviour {

@@ -7,15 +7,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8816752589c10db38d9dc986cf8a193, type: 3}
   m_Name: GameOver
   m_EditorClassIdentifier: 
   clips:
   - {fileID: 8300000, guid: 9cf1af07de4a88f489ba297c6aa0db43, type: 3}
-  clipOrder: 0
-  outputGroup: {fileID: 24300002, guid: 81a9cd0c7f2351cc4828056927d04aa6, type: 2}
+  clipType: 1
+  _mixer: {fileID: -739646224598091601, guid: 81a9cd0c7f2351cc4828056927d04aa6, type: 2}
   volume: 0.75
   pitch: 0
   loop: 0

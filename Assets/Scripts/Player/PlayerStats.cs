@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using SoundSystem;
 
 public class PlayerStats : Singleton<PlayerStats>{
     [SerializeField] private float maxHp;
