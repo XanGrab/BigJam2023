@@ -1,5 +1,6 @@
 using UnityEngine;
 using SoundSystem;
+using System;
 
 [RequireComponent(typeof(PlayerController))]
 public class MusicController : MonoBehaviour {
@@ -17,7 +18,6 @@ public class MusicController : MonoBehaviour {
     private void Start() {
         music.setClipIndex(trackIndex);
         music.Play();
-        // AudioManager.Play(music.name);
     }
 
     private void OnEnable() {

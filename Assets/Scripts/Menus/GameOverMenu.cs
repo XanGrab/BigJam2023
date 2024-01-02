@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using SoundSystem;
 
 [RequireComponent(typeof(UIDocument))]
 public class GameOverMenu : MonoBehaviour {
@@ -40,7 +41,14 @@ public class GameOverMenu : MonoBehaviour {
         mainMenuButton.clicked += MainMenuButtonPress;
     }
     
-    void ContinueButtonPress() => SceneManager.LoadScene("Gameplay");
-    void MainMenuButtonPress() => SceneManager.LoadScene("MainMenu");
+    void ContinueButtonPress() {
+        AudioManager.PlayOnce("Button");
+        SceneManager.LoadScene("Gameplay");
+    }
+
+    void MainMenuButtonPress() {
+        AudioManager.PlayOnce("Button");
+        SceneManager.LoadScene("MainMenu");
+    }
 
 }
