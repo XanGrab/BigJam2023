@@ -140,6 +140,7 @@ Transform:
   - {fileID: 7664177592131480291}
   - {fileID: 7935873367929761130}
   - {fileID: 1207302324094467849}
+  - {fileID: 492654083527388701}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &5073242901404600230
@@ -236,20 +237,27 @@ MonoBehaviour:
   modeWheelTransform: {fileID: 7664177592131480291}
   modeWheelSprite: {fileID: 8853743408375766226}
   scootSpeeds:
-  - -15
+  - -4
+  - 15
   - 7
+  - 9
   - 14
   - 11
-  - 9
-  - 15
-  - -4
-  attackPrefabs: []
+  - -15
+  attackPrefabs:
+  - {fileID: 6216052309251816817, guid: ffec37b3a9b08c14c8f23a1ae9e045ca, type: 3}
+  - {fileID: 6216052309251816817, guid: 6862ce866d5af4d4494cdbfe3806d281, type: 3}
+  - {fileID: 8516697484728905800, guid: c5b15ec92a3cfba498e869bcc1c6613f, type: 3}
+  - {fileID: 6216052309251816817, guid: c14cf685717aa3e42ae09bb0806c1487, type: 3}
+  - {fileID: 5767977415488016190, guid: f3e33827ccb70784a92e375ed89888dd, type: 3}
+  - {fileID: 6216052309251816817, guid: 099b3bb1134a8cd4cbfb6054c84e7bd0, type: 3}
+  - {fileID: 6216052309251816817, guid: 5ba8d21d776fcb842906af0adbe19f96, type: 3}
   rb: {fileID: 5073242901404600230}
   spriteRenderer: {fileID: 862976114796207447}
   anim: {fileID: 3742375398058250017}
   boom_anim: {fileID: 0}
-  attackRotate: {fileID: 0}
-  attackParent: {fileID: 0}
+  attackRotate: {fileID: 492654083527388701}
+  attackParent: {fileID: 2219673813157032720}
   raycastPoints:
   - {fileID: 2517603942573813435}
   - {fileID: 5798549502209696590}
@@ -585,6 +593,69 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &6147151778245601016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2219673813157032720}
+  m_Layer: 7
+  m_Name: AttackParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2219673813157032720
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6147151778245601016}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 492654083527388701}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8074690682977988696
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 492654083527388701}
+  m_Layer: 7
+  m_Name: AttackRotate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &492654083527388701
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8074690682977988696}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2219673813157032720}
+  m_Father: {fileID: 6121053811615619126}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8990009200418171357
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,7 +731,7 @@ SpriteRenderer:
   m_SortingLayerID: 1709670231
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2119162302, guid: b6817283a8df2654bb84b1fb4dfcf1e2, type: 3}
+  m_Sprite: {fileID: 6057714814945507974, guid: 83fc398c776c6a04f853634fbdb79060, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

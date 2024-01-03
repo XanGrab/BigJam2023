@@ -7,19 +7,19 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8816752589c10db38d9dc986cf8a193, type: 3}
   m_Name: Stage1
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: 8a9792e1b8d38ee4b943565b67ff941a, type: 3}
+  - {fileID: 8300000, guid: 4881e2a7931a8090089ccf0f917aa8c3, type: 3}
+  - {fileID: 8300000, guid: 39e37fa7b1b3d8a1cb48c2d9c8aaee9b, type: 3}
   - {fileID: 8300000, guid: 156e1dd4592a09c4dbd160da6298317d, type: 3}
   - {fileID: 8300000, guid: cd68922ca5824af4f920e15432e891ec, type: 3}
-  - {fileID: 8300000, guid: 56cc166c2ab81ef48b371c07962e251e, type: 3}
   - {fileID: 8300000, guid: 0750985f0f791ff4f92cd69e054eacd9, type: 3}
-  - {fileID: 8300000, guid: 39e37fa7b1b3d8a1cb48c2d9c8aaee9b, type: 3}
-  - {fileID: 8300000, guid: 4881e2a7931a8090089ccf0f917aa8c3, type: 3}
+  - {fileID: 8300000, guid: 56cc166c2ab81ef48b371c07962e251e, type: 3}
+  - {fileID: 8300000, guid: 8a9792e1b8d38ee4b943565b67ff941a, type: 3}
   clipType: 0
   _mixer: {fileID: -739646224598091601, guid: 81a9cd0c7f2351cc4828056927d04aa6, type: 2}
   volume: 0.75
