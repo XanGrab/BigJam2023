@@ -32,6 +32,6 @@ public class MusicController : MonoBehaviour {
     private void SwitchTrack(int modeIndex) {
         trackIndex = modeIndex - 5;
         music.SetClipIndex(trackIndex);
-        AudioManager.SwitchTo(music, 0.1f, 0.5f);
+        AudioManager.FadeTo(music, 0.1f, 0.5f);
     }
 }

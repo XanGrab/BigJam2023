@@ -8,9 +8,9 @@ public class StaffMeter : ScriptableObject {
     [SerializeField] private List<Sprite> sprites;
 
     public Sprite GetModeSprite(int modeIndex) {
-        Debug.Log("[Staff] modeIndex" + modeIndex);
+        // Debug.Log("[Staff] modeIndex" + modeIndex);
         spriteIndex = (modeIndex - 5) * 8;
-        Debug.Log("[Staff] spriteIndex" + spriteIndex);
+        // Debug.Log("[Staff] spriteIndex" + spriteIndex);
         Sprite modeSprite = sprites[spriteIndex];
         return modeSprite;
     }

@@ -15,13 +15,13 @@ public class MainMenu : MonoBehaviour {
 
     private Button[] menuNav = new Button[2];
     private int navIndex = 0;
-    
+
     void Start() {
         SetUpMainMenu();
     }
 
     void SetUpMainMenu() {
-        menu = GetComponent<UIDocument>(); 
+        menu = GetComponent<UIDocument>();
         var root = menu.rootVisualElement;
         startButton = root.Q<Button>("Start-Button");
         creditsButton = root.Q<Button>("Credits-Button");
@@ -29,11 +29,9 @@ public class MainMenu : MonoBehaviour {
         menuNav = new Button[] { startButton, creditsButton };
 
         // register navigation logic
-        root.RegisterCallback<NavigationMoveEvent>(e =>
-        {
+        root.RegisterCallback<NavigationMoveEvent>(e => {
             e.PreventDefault();
-            switch (e.direction)
-            {
+            switch (e.direction) {
                 case NavigationMoveEvent.Direction.Up:
                     navIndex = (navIndex + 1) % menuNav.Length;
                     menuNav[navIndex].Focus();
@@ -54,7 +52,7 @@ public class MainMenu : MonoBehaviour {
     }
 
     void SetUpCredits() {
-        menu = GetComponent<UIDocument>(); 
+        menu = GetComponent<UIDocument>();
         var root = menu.rootVisualElement;
 
         creditsBackButton = root.Q<Button>("Back-Button");
@@ -62,21 +60,21 @@ public class MainMenu : MonoBehaviour {
         // register button logic
         creditsBackButton.clicked += CreditsBackButtonPress;
     }
-    
+
     void StartButtonPress() {
-        AudioManager.PlayOnce("Button");
+        AudioManager.PlayOneShot("Button");
         SceneManager.LoadScene("Gameplay");
     }
 
     void CreditsButtonPress() {
-        AudioManager.PlayOnce("Button");
+        AudioManager.PlayOneShot("Button");
         menu.visualTreeAsset = Menus[1];
         menu.visualTreeAsset.Instantiate();
         SetUpCredits();
     }
 
     void CreditsBackButtonPress() {
-        AudioManager.PlayOnce("Button");
+        AudioManager.PlayOneShot("Button");
         menu.visualTreeAsset = Menus[0];
         menu.visualTreeAsset.Instantiate();
         SetUpMainMenu();
