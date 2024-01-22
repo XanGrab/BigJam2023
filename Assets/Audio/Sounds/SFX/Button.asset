@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8816752589c10db38d9dc986cf8a193, type: 3}
+  m_Script: {fileID: 11500000, guid: 250ed2253a81e8445af9fd307a0b0fc0, type: 3}
   m_Name: Button
   m_EditorClassIdentifier: 
   clips:
   - {fileID: 8300000, guid: c4e1133861e78f839825ad220174171f, type: 3}
-  clipType: 1
+  clipType: 0
   _mixer: {fileID: -4758907518365176108, guid: 81a9cd0c7f2351cc4828056927d04aa6, type: 2}
   volume: 0.8
   pitch: 1

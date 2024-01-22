@@ -1,8 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
-{
+public class EnemyController : MonoBehaviour {
     [Header("External References")]
     [SerializeField] private GameObject afterimagePrefab;
 
@@ -17,8 +16,7 @@ public class EnemyController : MonoBehaviour
     private bool isDead = false;
 
     private AnimState currentAnimation;
-    enum AnimState
-    {
+    enum AnimState {
         Idle,
         Walking,
         Attack,
@@ -60,10 +58,8 @@ public class EnemyController : MonoBehaviour
     /// <returns>/// Returns if the player is currently able to move (not attacking, dashing, stunned, etc.)</returns>
     private bool CanMove => (true);
 
-    private void Update()
-    {
-        if (CanMove)
-        {
+    private void Update() {
+        if (CanMove) {
             // ChangeAnimationState( AnimState.Walking );
             #region Acceleration
             //Get gravityless velocity
@@ -77,15 +73,12 @@ public class EnemyController : MonoBehaviour
             dist.y = 0;
             Vector3 currInput = new Vector3();
 
-            if (!isDead)
-            {
+            if (!isDead) {
                 //XZ Friction + acceleration
                 if (dist.magnitude > distToPlayerForAttack)
                     currInput = dist.normalized;
-                else
-                {
-                    if (!isAttacking)
-                    {
+                else {
+                    if (!isAttacking) {
                         ChangeAnimationState(AnimState.Attack);
 
                         isAttacking = true;
@@ -95,8 +88,7 @@ public class EnemyController : MonoBehaviour
 
             if (currInput.magnitude > 0.05f)
                 currInput.Normalize();
-            if (grounded)
-            {
+            if (grounded) {
                 //Apply ground fricion
                 Vector3 velocity_local_friction = velocity_local.normalized * Mathf.Max(0, velocity_local.magnitude - frictionSpeed_ground * Time.deltaTime);
 
@@ -106,20 +98,16 @@ public class EnemyController : MonoBehaviour
                 {
                     Vector3 velocity_local_input = velocity_local_friction + accelSpeed_ground * Time.deltaTime * currInput;
 
-                    if (velocity_local_friction.magnitude <= maxSpeed)
-                    {
+                    if (velocity_local_friction.magnitude <= maxSpeed) {
                         //under max speed, accelerate towards max speed
                         updatedVelocity = velocity_local_input.normalized * Mathf.Min(maxSpeed, velocity_local_input.magnitude);
-                    }
-                    else
-                    {
+                    } else {
                         //over max speed
                         if (velocity_local_input.magnitude <= maxSpeed) //Use new direction, would go less than max speed
                         {
                             updatedVelocity = velocity_local_input;
-                        }
-                        else //Would stay over max speed, use vector with smaller magnitude
-                        {
+                        } else //Would stay over max speed, use vector with smaller magnitude
+                          {
                             //Would accelerate more, so don't user player input
                             if (velocity_local_input.magnitude > velocity_local_friction.magnitude)
                                 updatedVelocity = velocity_local_friction;
@@ -132,9 +120,7 @@ public class EnemyController : MonoBehaviour
 
                 //Convert local velocity to global velocity
                 rb.velocity = new Vector3(0, rb.velocity.y, 0) + transform.TransformDirection(updatedVelocity);
-            }
-            else
-            {
+            } else {
                 //Apply air fricion
                 Vector3 velocity_local_friction = velocity_local.normalized * Mathf.Max(0, velocity_local.magnitude - frictionSpeed_air);
 
@@ -144,20 +130,16 @@ public class EnemyController : MonoBehaviour
                 {
                     Vector3 velocity_local_with_input = velocity_local_friction + currInput * accelSpeed_air;
 
-                    if (velocity_local_friction.magnitude <= maxSpeed)
-                    {
+                    if (velocity_local_friction.magnitude <= maxSpeed) {
                         //under max speed, accelerate towards max speed
                         updatedVelocity = velocity_local_with_input.normalized * Mathf.Min(maxSpeed, velocity_local_with_input.magnitude);
-                    }
-                    else
-                    {
+                    } else {
                         //over max speed
                         if (velocity_local_with_input.magnitude <= maxSpeed) //Use new direction, would go less than max speed
                         {
                             updatedVelocity = velocity_local_with_input;
-                        }
-                        else //Would stay over max speed, use vector with smaller magnitude
-                        {
+                        } else //Would stay over max speed, use vector with smaller magnitude
+                          {
                             //Would accelerate more, so don't user player input
                             if (velocity_local_with_input.magnitude > velocity_local_friction.magnitude)
                                 updatedVelocity = velocity_local_friction;
@@ -176,14 +158,10 @@ public class EnemyController : MonoBehaviour
 
 
         //Sprite flipping + spark vfx
-        if (rb.velocity.x < -epsilon)
-        {
+        if (rb.velocity.x < -epsilon) {
             spriteRenderer.flipX = true;
-        }
-        else
-        {
-            if (rb.velocity.x > epsilon)
-            {
+        } else {
+            if (rb.velocity.x > epsilon) {
                 spriteRenderer.flipX = false;
             }
         }
@@ -192,8 +170,7 @@ public class EnemyController : MonoBehaviour
             return;
 
         //Gravity
-        if (useGravity)
-        {
+        if (useGravity) {
             if ((PlayerController.Instance.transform.position.y - 1 > transform.position.y) && rb.velocity.y > 0)
                 rb.velocity -= new Vector3(0, gravUp * Time.deltaTime, 0);
             else
@@ -201,8 +178,7 @@ public class EnemyController : MonoBehaviour
         }
 
         //Set animation states
-        if (grounded)
-        {
+        if (grounded) {
             if (Mathf.Abs(rb.velocity.x) > epsilon)
                 ChangeAnimationState(AnimState.Walking);
             else
@@ -212,18 +188,15 @@ public class EnemyController : MonoBehaviour
 
 
     // Update is called once per frame
-    void FixedUpdate()
-    {
+    void FixedUpdate() {
         //Ground checking
         bool lastGrounded = grounded;
 
         #region determine if player is grounded or not
         grounded = false; //number of raycasts that hit the ground 
 
-        foreach (Transform point in raycastPoints)
-        {
-            if (Physics.Raycast(point.position, -transform.up, out RaycastHit hit, raycastHeight, terrainLayer))
-            {
+        foreach (Transform point in raycastPoints) {
+            if (Physics.Raycast(point.position, -transform.up, out RaycastHit hit, raycastHeight, terrainLayer)) {
                 grounded = true;
                 break;
             }
@@ -235,16 +208,14 @@ public class EnemyController : MonoBehaviour
             lastTimeGrounded = Time.time;
 
         //Jump - grounded
-        if (PlayerController.Instance.transform.position.y - 2 > transform.position.y)
-        {
+        if (PlayerController.Instance.transform.position.y - 2 > transform.position.y) {
             if ((grounded || (Time.time - lastTimeGrounded <= coyoteTime)))
                 Jump();
             else
                 lastTimePressedJump = Time.time;
         }
         //Jump - buffered
-        if ((grounded == true))
-        {
+        if ((grounded == true)) {
             if (Time.time - lastTimePressedJump <= jumpBuffer)
                 Jump();
         }
@@ -252,14 +223,12 @@ public class EnemyController : MonoBehaviour
         //TODO: Enemy atttacks
     }
 
-    private void ChangeAnimationState(AnimState _newState, bool doAnyways = false)
-    {
+    private void ChangeAnimationState(AnimState _newState, bool doAnyways = false) {
         //Stop same animation from interrupting itself
         if (currentAnimation == _newState)
             return;
 
-        if (!isSpin || doAnyways)
-        {
+        if (!isSpin || doAnyways) {
             //Play new animation
             anim.Play(_newState.ToString());
         }
@@ -268,8 +237,7 @@ public class EnemyController : MonoBehaviour
         currentAnimation = _newState;
     }
 
-    private void Jump()
-    {
+    private void Jump() {
         useGravity = true;
 
         rb.velocity = new Vector2(rb.velocity.x, jumpPower);
@@ -277,8 +245,7 @@ public class EnemyController : MonoBehaviour
         grounded = false;
     }
 
-    public void SpawnHitbox()
-    {
+    public void SpawnHitbox() {
         if (spriteRenderer.flipX)
             attackRotate.localScale = new Vector3(-1, 1, 1);
         else
@@ -287,30 +254,25 @@ public class EnemyController : MonoBehaviour
         GameObject newHitbox = Instantiate(attackPrefab, attackParent);
     }
 
-    public void OnAttackEnd()
-    {
+    public void OnAttackEnd() {
         isAttacking = false;
     }
 
-    public void Scoot()
-    {
+    public void Scoot() {
         float speedToUse = scootSpeed;
 
         if (spriteRenderer.flipX)
             speedToUse *= -1;
 
-        if (isSpin)
-        {
+        if (isSpin) {
             Vector3 dist = (PlayerController.Instance.transform.position - transform.position).normalized;
             dist.y = 0;
             rb.velocity = dist * scootSpeed;
-        }
-        else
+        } else
             rb.velocity = new Vector3(speedToUse, rb.velocity.y, rb.velocity.z);
     }
 
-    public void OnDeath()
-    {
+    public void OnDeath() {
         if (isDead)
             return;
 
@@ -320,6 +282,6 @@ public class EnemyController : MonoBehaviour
         isDead = true;
 
         PlayerHUD.Instance.OnEnemyKilled();
-        Debug.Log("enemy killed!");
+        // Debug.Log("enemy killed!");
     }
 }

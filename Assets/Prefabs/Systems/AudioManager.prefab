@@ -43,12 +43,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 895267029073416966}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ee791dad6bdd57a9c4d7aa2ab7140b, type: 3}
+  m_Script: {fileID: 11500000, guid: 1317f0799c3c66335b16b5d1175b0327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   persistSounds:
+  - {fileID: 11400000, guid: 46dd1f05ad523a221ac41f979a43fdbe, type: 2}
   - {fileID: 11400000, guid: c0d7f147768adf1fab90d46b5d04c62b, type: 2}
-  - {fileID: 11400000, guid: ac271f23c7e5208a6b62afb3697a94ce, type: 2}
   playOnAwake: 0
 --- !u!81 &4428781021013217353
 AudioListener:
